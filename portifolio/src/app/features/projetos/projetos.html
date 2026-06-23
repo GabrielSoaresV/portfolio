@@ -1,0 +1,31 @@
+<section class="projetos" id="projetos">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Portfólio</span>
+      <h2 class="section-title">Projetos em Destaque</h2>
+      <p class="section-desc">Alguns dos trabalhos que mais me orgulho de ter desenvolvido.</p>
+    </div>
+    <div class="projetos-grid">
+      <div class="projeto-card" *ngFor="let projeto of projetos">
+        <div class="projeto-image">
+          <div class="projeto-placeholder">
+            <span class="projeto-letter">{{ projeto.letter }}</span>
+          </div>
+          <div class="projeto-overlay">
+            <a [href]="projeto.link" target="_blank" class="projeto-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Ver Projeto
+            </a>
+          </div>
+        </div>
+        <div class="projeto-info">
+          <h3 class="projeto-title">{{ projeto.title }}</h3>
+          <p class="projeto-desc">{{ projeto.description }}</p>
+          <div class="projeto-tags">
+            <span class="projeto-tag" *ngFor="let tag of projeto.tags">{{ tag }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

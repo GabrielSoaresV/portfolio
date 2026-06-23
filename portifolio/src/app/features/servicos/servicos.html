@@ -1,0 +1,20 @@
+<section class="servicos" id="servicos">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Serviços</span>
+      <h2 class="section-title">O que eu construo</h2>
+      <p class="section-desc">Soluções completas para transformar sua ideia em realidade digital.</p>
+    </div>
+    <div class="servicos-grid">
+      <div class="servico-card" *ngFor="let servico of servicos">
+        <div class="servico-number">{{ servico.numero }}</div>
+        <div class="servico-icon" [innerHTML]="servico.icon"></div>
+        <h3 class="servico-title">{{ servico.titulo }}</h3>
+        <p class="servico-desc">{{ servico.descricao }}</p>
+        <ul class="servico-features">
+          <li *ngFor="let feature of servico.features">{{ feature }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

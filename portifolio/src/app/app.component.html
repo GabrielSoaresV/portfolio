@@ -1,0 +1,34 @@
+<header class="header" [class.scrolled]="true">
+  <div class="header-container">
+    <a href="#inicio" class="header-logo">SN</a>
+    <nav class="header-nav" [class.open]="menuOpen">
+      <a href="#inicio" (click)="closeMenu()">Início</a>
+      <a href="#sobre" (click)="closeMenu()">Sobre</a>
+      <a href="#stacks" (click)="closeMenu()">Stacks</a>
+      <a href="#projetos" (click)="closeMenu()">Projetos</a>
+      <a href="#experiencia" (click)="closeMenu()">Experiência</a>
+      <a href="#servicos" (click)="closeMenu()">Serviços</a>
+      <a href="#timeline" (click)="closeMenu()">Timeline</a>
+      <a href="#contato" (click)="closeMenu()">Contato</a>
+    </nav>
+    <button class="header-menu-btn" (click)="toggleMenu()" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <app-hero></app-hero>
+  <app-sobre-mim></app-sobre-mim>
+  <app-minhas-stacks></app-minhas-stacks>
+  <app-projetos></app-projetos>
+  <app-feedbacks></app-feedbacks>
+  <app-experiencia></app-experiencia>
+  <app-servicos></app-servicos>
+  <app-linha-do-tempo></app-linha-do-tempo>
+  <app-contato></app-contato>
+</main>
+
+<app-footer></app-footer>

@@ -1,0 +1,19 @@
+<section class="stacks" id="stacks">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Tecnologias</span>
+      <h2 class="section-title">Minhas Stacks</h2>
+      <p class="section-desc">As ferramentas e tecnologias que utilizo para construir soluções robustas.</p>
+    </div>
+    <div class="stacks-grid">
+      <div class="stack-card" *ngFor="let stack of stacks">
+        <div class="stack-icon" [innerHTML]="stack.icon"></div>
+        <h3 class="stack-name">{{ stack.name }}</h3>
+        <p class="stack-desc">{{ stack.description }}</p>
+        <div class="stack-tags">
+          <span class="tag" *ngFor="let tag of stack.tags">{{ tag }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

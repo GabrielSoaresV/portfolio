@@ -1,0 +1,32 @@
+<section class="feedbacks" id="feedbacks">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Depoimentos</span>
+      <h2 class="section-title">Feedbacks dos Clientes</h2>
+      <p class="section-desc">O que dizem os clientes sobre os projetos que desenvolvi.</p>
+    </div>
+    <div class="feedbacks-grid">
+      <div class="feedback-card" *ngFor="let f of feedbacks">
+        <div class="feedback-stars">
+          <svg *ngFor="let s of [1,2,3,4,5]" width="18" height="18" viewBox="0 0 24 24" [attr.fill]="s <= f.nota ? '#fbbf24' : 'none'" [attr.stroke]="s <= f.nota ? '#fbbf24' : '#475569'" stroke-width="1.5">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.77 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/>
+          </svg>
+        </div>
+        <p class="feedback-comentario">"{{ f.comentario }}"</p>
+        <div class="feedback-footer">
+          <div class="feedback-avatar">
+            <img [src]="f.avatar" [alt]="'Foto de ' + f.nome" loading="lazy" />
+          </div>
+          <div class="feedback-info">
+            <span class="feedback-nome">{{ f.nome }}</span>
+            <span class="feedback-cargo">{{ f.cargo }}</span>
+          </div>
+        </div>
+        <div class="feedback-projeto">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+          <span>{{ f.projeto }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
