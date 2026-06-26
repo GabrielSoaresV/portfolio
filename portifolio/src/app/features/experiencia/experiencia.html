@@ -1,18 +1,18 @@
 <section class="experiencia" id="experiencia">
   <div class="container">
     <div class="section-header">
-      <span class="section-tag">Trajetória</span>
-      <h2 class="section-title">Experiência e Estudos</h2>
-      <p class="section-desc">Minha jornada profissional e acadêmica na área de tecnologia.</p>
+      <span class="section-tag animate-fade-in-up">Trajetória</span>
+      <h2 class="section-title animate-fade-in-up delay-1">Experiência e Estudos</h2>
+      <p class="section-desc animate-fade-in-up delay-2">Minha jornada profissional e acadêmica na área de tecnologia.</p>
     </div>
     <div class="experiencia-content">
-      <div class="experiencia-col">
+      <div class="experiencia-col animate-slide-left delay-2">
         <h3 class="col-title">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
           Experiência Profissional
         </h3>
         <div class="experiencia-list">
-          <div class="experiencia-item" *ngFor="let exp of experiencias">
+          <div class="experiencia-item" *ngFor="let exp of experiencias; let i = index" [style.animationDelay]="(i * 0.1 + 0.3) + 's'">
             <div class="item-dot"></div>
             <div class="item-content">
               <span class="item-periodo">{{ exp.periodo }}</span>
@@ -23,13 +23,13 @@
           </div>
         </div>
       </div>
-      <div class="experiencia-col">
+      <div class="experiencia-col animate-slide-right delay-3">
         <h3 class="col-title">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
           Formação Acadêmica
         </h3>
         <div class="experiencia-list">
-          <div class="experiencia-item" *ngFor="let estudo of estudos">
+          <div class="experiencia-item" *ngFor="let estudo of estudos; let i = index" [style.animationDelay]="(i * 0.1 + 0.4) + 's'">
             <div class="item-dot"></div>
             <div class="item-content">
               <span class="item-periodo">{{ estudo.periodo }}</span>

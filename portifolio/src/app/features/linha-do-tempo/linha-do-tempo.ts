@@ -13,6 +13,8 @@ interface TimelineItem {
   styleUrl: './linha-do-tempo.css',
 })
 export class LinhaDoTempo {
+  expandido = false;
+
   timelineItems: TimelineItem[] = [
     {
       ano: '2017',
@@ -45,4 +47,8 @@ export class LinhaDoTempo {
       descricao: 'Atuando como consultor técnico e desenvolvendo produtos digitais próprios, sempre buscando inovar e aprender.'
     }
   ];
+
+  toggle(): void {
+    this.expandido = !this.expandido;
+  }
 }

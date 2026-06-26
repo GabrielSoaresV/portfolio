@@ -1,12 +1,12 @@
 <section class="servicos" id="servicos">
   <div class="container">
     <div class="section-header">
-      <span class="section-tag">Serviços</span>
-      <h2 class="section-title">O que eu construo</h2>
-      <p class="section-desc">Soluções completas para transformar sua ideia em realidade digital.</p>
+      <span class="section-tag animate-fade-in-up">Serviços</span>
+      <h2 class="section-title animate-fade-in-up delay-1">O que eu construo</h2>
+      <p class="section-desc animate-fade-in-up delay-2">Soluções completas para transformar sua ideia em realidade digital.</p>
     </div>
     <div class="servicos-grid">
-      <div class="servico-card" *ngFor="let servico of servicos">
+      <div class="servico-card animate-fade-in-up" *ngFor="let servico of servicos; let i = index" [style.animationDelay]="(i * 0.1 + 0.3) + 's'">
         <div class="servico-number">{{ servico.numero }}</div>
         <div class="servico-icon" [innerHTML]="servico.icon"></div>
         <h3 class="servico-title">{{ servico.titulo }}</h3>

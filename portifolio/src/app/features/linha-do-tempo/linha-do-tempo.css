@@ -99,7 +99,14 @@
   border-radius: 14px;
   padding: 24px;
   max-width: 380px;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0;
+  animation: cardFadeIn 0.5s ease forwards;
+}
+
+@keyframes cardFadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .timeline-card:hover {
@@ -132,7 +139,62 @@
   line-height: 1.6;
 }
 
+.mobile-toggle {
+  display: none;
+}
+
 @media (max-width: 768px) {
+  .mobile-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 10px;
+    color: #60a5fa;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+  }
+
+  .mobile-toggle:hover {
+    background: rgba(59, 130, 246, 0.15);
+  }
+
+  .mobile-toggle svg {
+    transition: transform 0.3s ease;
+  }
+
+  .mobile-toggle svg.rotated {
+    transform: rotate(180deg);
+  }
+
+  .timeline-wrapper.collapsed {
+    max-height: 420px;
+    overflow: hidden;
+    position: relative;
+    transition: max-height 0.5s ease;
+  }
+
+  .timeline-wrapper {
+    transition: max-height 0.5s ease;
+  }
+
+  .timeline-wrapper.collapsed::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(transparent, #0a0a0f);
+    pointer-events: none;
+  }
+
   .timeline-line {
     left: 20px;
   }

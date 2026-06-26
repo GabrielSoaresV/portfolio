@@ -1,12 +1,12 @@
 <section class="stacks" id="stacks">
   <div class="container">
     <div class="section-header">
-      <span class="section-tag">Tecnologias</span>
-      <h2 class="section-title">Minhas Stacks</h2>
-      <p class="section-desc">As ferramentas e tecnologias que utilizo para construir soluções robustas.</p>
+      <span class="section-tag animate-fade-in-up">Tecnologias</span>
+      <h2 class="section-title animate-fade-in-up delay-1">Minhas Stacks</h2>
+      <p class="section-desc animate-fade-in-up delay-2">As ferramentas e tecnologias que utilizo para construir soluções robustas.</p>
     </div>
-    <div class="stacks-grid">
-      <div class="stack-card" *ngFor="let stack of stacks">
+    <div class="stacks-grid" [class.collapsed]="!expandido">
+      <div class="stack-card animate-fade-in-up" *ngFor="let stack of stacks; let i = index" [style.animationDelay]="(i * 0.1 + 0.3) + 's'">
         <div class="stack-icon" [innerHTML]="stack.icon"></div>
         <h3 class="stack-name">{{ stack.name }}</h3>
         <p class="stack-desc">{{ stack.description }}</p>
@@ -14,6 +14,13 @@
           <span class="tag" *ngFor="let tag of stack.tags">{{ tag }}</span>
         </div>
       </div>
+    </div>
+
+    <div class="mobile-toggle" (click)="toggle()">
+      <span>{{ expandido ? 'Minimizar' : 'Expandir' }} stacks</span>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" [class.rotated]="expandido">
+        <polyline points="6 9 12 15 18 9"/>
+      </svg>
     </div>
   </div>
 </section>

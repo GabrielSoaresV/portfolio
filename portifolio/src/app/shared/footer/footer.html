@@ -1,7 +1,12 @@
-<footer class="footer">
+<footer class="footer" id="footer">
+  <div class="footer-top-wave">
+    <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="#08080f"/>
+    </svg>
+  </div>
   <div class="container">
     <div class="footer-content">
-      <div class="footer-brand">
+      <div class="footer-brand animate-fade-in-up">
         <span class="footer-logo">SN</span>
         <p class="footer-desc">Desenvolvedor Full Stack apaixonado por criar experiências digitais incríveis e soluções que fazem a diferença.</p>
         <div class="footer-socials">
@@ -14,10 +19,13 @@
           <a href="#" aria-label="Twitter" class="footer-social">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
           </a>
+          <a href="#" aria-label="Email" class="footer-social">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
         </div>
       </div>
       <div class="footer-links">
-        <div class="footer-col">
+        <div class="footer-col animate-fade-in-up delay-1">
           <h4>Navegação</h4>
           <ul>
             <li><a href="#inicio">Início</a></li>
@@ -28,20 +36,48 @@
             <li><a href="#contato">Contato</a></li>
           </ul>
         </div>
-        <div class="footer-col">
+        <div class="footer-col animate-fade-in-up delay-2">
           <h4>Serviços</h4>
           <ul>
             <li><a href="#servicos">Websites</a></li>
             <li><a href="#servicos">Aplicações Web</a></li>
             <li><a href="#servicos">Aplicativos Mobile</a></li>
             <li><a href="#servicos">APIs e Backend</a></li>
+            <li><a href="#servicos">Consultoria</a></li>
+          </ul>
+        </div>
+        <div class="footer-col animate-fade-in-up delay-3">
+          <h4>Contato</h4>
+          <ul>
+            <li><a href="mailto:seuemail@exemplo.com">seuemail@exemplo.com</a></li>
+            <li><a href="#">São Paulo, Brasil</a></li>
+            <li><a href="#">Disponível para freelas</a></li>
           </ul>
         </div>
       </div>
     </div>
+    <div class="footer-cta animate-fade-in-up delay-2">
+      <div class="cta-content">
+        <h3>Vamos trabalhar juntos?</h3>
+        <p>Transforme sua ideia em um projeto real. Entre em contato e vamos conversar.</p>
+      </div>
+      <a href="#contato" class="cta-button">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        Falar no WhatsApp
+      </a>
+    </div>
     <div class="footer-bottom">
       <p>2025 Seu Nome. Todos os direitos reservados.</p>
-      <p>Desenvolvido com Angular</p>
+      <div class="footer-bottom-links">
+        <a href="#">Política de Privacidade</a>
+        <span class="separator">|</span>
+        <a href="#">Termos de Uso</a>
+      </div>
+      <p class="made-with">
+        Desenvolvido com
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#ef4444" stroke="#ef4444" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        e Angular
+      </p>
     </div>
   </div>
 </footer>

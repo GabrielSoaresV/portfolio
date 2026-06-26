@@ -1,21 +1,22 @@
 <section class="projetos" id="projetos">
   <div class="container">
     <div class="section-header">
-      <span class="section-tag">Portfólio</span>
-      <h2 class="section-title">Projetos em Destaque</h2>
-      <p class="section-desc">Alguns dos trabalhos que mais me orgulho de ter desenvolvido.</p>
+      <span class="section-tag animate-fade-in-up">Portfólio</span>
+      <h2 class="section-title animate-fade-in-up delay-1">Projetos em Destaque</h2>
+      <p class="section-desc animate-fade-in-up delay-2">Alguns dos trabalhos que mais me orgulho de ter desenvolvido.</p>
     </div>
-    <div class="projetos-grid">
-      <div class="projeto-card" *ngFor="let projeto of projetos">
+
+    <div class="projetos-grid" [class.collapsed]="!expandido">
+      <a class="projeto-card animate-fade-in-up" *ngFor="let projeto of projetos; let i = index" [routerLink]="['/projetos', projeto.slug]" [style.animationDelay]="(i * 0.1 + 0.3) + 's'">
         <div class="projeto-image">
           <div class="projeto-placeholder">
             <span class="projeto-letter">{{ projeto.letter }}</span>
           </div>
           <div class="projeto-overlay">
-            <a [href]="projeto.link" target="_blank" class="projeto-link">
+            <span class="projeto-link">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              Ver Projeto
-            </a>
+              Ver Detalhes
+            </span>
           </div>
         </div>
         <div class="projeto-info">
@@ -25,7 +26,14 @@
             <span class="projeto-tag" *ngFor="let tag of projeto.tags">{{ tag }}</span>
           </div>
         </div>
-      </div>
+      </a>
+    </div>
+
+    <div class="mobile-toggle" (click)="toggle()">
+      <span>{{ expandido ? 'Minimizar' : 'Expandir' }} projetos</span>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" [class.rotated]="expandido">
+        <polyline points="6 9 12 15 18 9"/>
+      </svg>
     </div>
   </div>
 </section>

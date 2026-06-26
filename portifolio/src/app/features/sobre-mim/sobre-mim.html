@@ -1,42 +1,78 @@
 <section class="sobre" id="sobre">
   <div class="container">
     <div class="section-header">
-      <span class="section-tag">Sobre Mim</span>
-      <h2 class="section-title">Quem sou eu</h2>
-      <p class="section-desc">Conheça um pouco da minha história e paixão pela tecnologia.</p>
+      <span class="section-tag animate-fade-in-up">Sobre Mim</span>
+      <h2 class="section-title animate-fade-in-up delay-1">Quem sou eu</h2>
+      <p class="section-desc animate-fade-in-up delay-2">Conheça um pouco da minha história e trajetória pela TI.</p>
     </div>
     <div class="sobre-content">
-      <div class="sobre-image">
-        <div class="image-wrapper">
-          <div class="image-placeholder">
-            <span class="placeholder-letter">S</span>
+      <div class="sobre-image animate-fade-in-up delay-2">
+        <div class="carousel-wrapper">
+          <div class="carousel-container" (mouseenter)="pauseCarousel()" (mouseleave)="resumeCarousel()">
+            <div class="carousel-slides" [style.transform]="'translateX(-' + (currentSlide * 100) + '%)'">
+              <div class="carousel-slide" *ngFor="let item of carouselItems">
+                <img [src]="item.image" [alt]="item.descricao" loading="lazy" />
+                <p class="slide-caption">{{ item.descricao }}</p>
+              </div>
+            </div>
+            <button class="carousel-btn prev" (click)="prevSlide()" aria-label="Anterior">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <button class="carousel-btn next" (click)="nextSlide()" aria-label="Proximo">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
           </div>
-          <div class="image-dots"></div>
+          <div class="carousel-dots">
+            <button
+              class="dot"
+              *ngFor="let item of carouselItems; let i = index"
+              [class.active]="i === currentSlide"
+              (click)="goToSlide(i)"
+              [attr.aria-label]="'Slide ' + (i + 1)">
+            </button>
+          </div>
         </div>
       </div>
-      <div class="sobre-texto">
-        <h3>Desenvolvedor apaixonado por criar soluções que fazem a diferença</h3>
+      <div class="sobre-texto animate-fade-in-up delay-3">
+        <h3>Transformando curiosidade em soluções de software</h3>
         <p>
-          Com mais de 5 anos de experiência no desenvolvimento de software, dedico-me a construir aplicações web e mobile que combinam performance, usabilidade e design moderno.
+          Minha curiosidade por tecnologia começou ainda na infância, explorando
+          eletrônicos e tentando entender como as coisas funcionavam. Com o tempo,
+          esse interesse genuíno evoluiu para a paixão por programação e desenvolvimento de software.
         </p>
+
         <p>
-          Minha jornada começou com a curiosidade de entender como as coisas funcionam por trás das telas. Hoje, transformo essa curiosidade em código limpo, arquiteturas escaláveis e experiências digitais memoráveis.
+          Atualmente, curso Análise e Desenvolvimento de Sistemas (ADS) e Engenharia de Software,
+          com foco em estudos avançados voltados para o desenvolvimento Backend. Busco dominar as 
+          metodologias e arquiteturas mais eficientes do mercado atual — incluindo integrações com 
+          Inteligência Artificial —, sempre com o objetivo de construir aplicações escaláveis, 
+          seguras e de fácil manutenção.
         </p>
+
         <p>
-          Acredito que a tecnologia deve ser acessível, intuitiva e resolver problemas reais. Por isso, cada projeto é uma oportunidade de aprender algo novo e entregar valor genuíno.
+          Mais do que dominar ferramentas, meu propósito é desenvolver soluções que resolvam 
+          problemas reais de negócios. Acredito que um bom software deve simplificar processos, 
+          automatizar tarefas repetitivas e permitir que as pessoas foquem no que realmente importa.
+        </p>
+
+        <p>
+          Além disso, tenho como um dos meus objetivos atuais contribuir com projetos open source e instituições 
+          sociais sem fins lucrativos. Desenvolvo sistemas gratuitos utilizando tecnologias livres, 
+          tornando ferramentas de gestão acessíveis para organizações que transformam a sociedade, 
+          mas que não possuem recursos para grandes investimentos em tecnologia.
         </p>
         <div class="sobre-stats">
-          <div class="stat">
-            <span class="stat-number">5+</span>
-            <span class="stat-label">Anos de Experiência</span>
-          </div>
-          <div class="stat">
-            <span class="stat-number">50+</span>
+          <div class="stat animate-scale-in delay-5">
+            <span class="stat-number">3</span>
             <span class="stat-label">Projetos Entregues</span>
           </div>
-          <div class="stat">
-            <span class="stat-number">30+</span>
+          <div class="stat animate-scale-in delay-6">
+            <span class="stat-number">8+</span>
             <span class="stat-label">Clientes Satisfeitos</span>
+          </div>
+          <div class="stat animate-scale-in delay-4">
+            <span class="stat-number">2+</span>
+            <span class="stat-label">Anos de Experiência no mercado</span>
           </div>
         </div>
       </div>
