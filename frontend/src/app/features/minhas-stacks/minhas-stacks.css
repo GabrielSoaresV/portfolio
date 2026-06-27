@@ -93,6 +93,13 @@
   margin-bottom: 20px;
 }
 
+.stack-icon img {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+  display: block;
+}
+
 .stack-name {
   font-size: 1.25rem;
   font-weight: 600;

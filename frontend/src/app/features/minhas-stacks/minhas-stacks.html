@@ -7,7 +7,8 @@
     </div>
     <div class="stacks-grid" [class.collapsed]="!expandido">
       <div class="stack-card animate-fade-in-up" *ngFor="let stack of stacks; let i = index" [style.animationDelay]="(i * 0.1 + 0.3) + 's'">
-        <div class="stack-icon" [innerHTML]="stack.icon"></div>
+        <div class="stack-icon">
+          <img [src]="stack.icon" [alt]="stack.name"></div>
         <h3 class="stack-name">{{ stack.name }}</h3>
         <p class="stack-desc">{{ stack.description }}</p>
         <div class="stack-tags">
