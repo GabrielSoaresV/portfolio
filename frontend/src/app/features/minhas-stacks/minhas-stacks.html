@@ -7,6 +7,10 @@
     </div>
     <div class="stacks-grid" [class.collapsed]="!expandido">
       <div class="stack-card animate-fade-in-up" *ngFor="let stack of stacks; let i = index" [style.animationDelay]="(i * 0.1 + 0.3) + 's'">
+        <a class="details-button" [routerLink]="['/stacks', stack.slug]" [queryParams]="{ tecnologia: stack.slug === 'backend' ? 'java' : null }" [attr.aria-label]="'Ver detalhes de ' + stack.name">
+          <span>Ver detalhes</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
         <div class="stack-icon">
           <img [src]="stack.icon" [alt]="stack.name">
 
@@ -26,6 +30,10 @@
         <div class="stack-tags">
           <span class="tag" *ngFor="let tag of stack.tags">{{ tag }}</span>
         </div>
+        <a class="card-mobile-link" [routerLink]="['/stacks', stack.slug]">
+          Explorar stack
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
       </div>
     </div>
 

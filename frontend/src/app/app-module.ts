@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing-module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,7 @@ import { SobreMim } from './features/sobre-mim/sobre-mim';
 import { MinhasStacks } from './features/minhas-stacks/minhas-stacks';
 import { Projetos } from './features/projetos/projetos';
 import { ProjetoDetalhe } from './features/projeto-detalhe/projeto-detalhe';
+import { StackDetalhe } from './features/stack-detalhe/stack-detalhe';
 import { Feedbacks } from './features/feedbacks/feedbacks';
 import { Experiencia } from './features/experiencia/experiencia';
 import { Servicos } from './features/servicos/servicos';
@@ -29,6 +31,7 @@ import { Navbar } from './shared/navbar/navbar';
     MinhasStacks,
     Projetos,
     ProjetoDetalhe,
+    StackDetalhe,
     Feedbacks,
     Experiencia,
     Servicos,
@@ -42,7 +45,8 @@ import { Navbar } from './shared/navbar/navbar';
     CommonModule,
     AppRoutingModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

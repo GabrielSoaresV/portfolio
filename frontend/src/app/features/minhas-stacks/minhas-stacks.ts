@@ -1,6 +1,7 @@
 import { Component, HostListener } from '@angular/core';
 
 interface Stack {
+  slug: string;
   name: string;
   description: string;
   tags: string[];
@@ -43,6 +44,7 @@ export class MinhasStacks {
 
   stacks: Stack[] = [
     {
+      slug: 'backend',
       name: 'Backend',
       description: 'APIs RESTful, arquitetura limpa e sistemas escaláveis, Mensage-Breake.',
       tags: ['Java', 'Spring Boot', 'Spring Security', 'JPA/Hibernate', 'JWT', 'Maven', 'C#', '.NET'],
@@ -55,6 +57,7 @@ export class MinhasStacks {
         }
     },
     {
+      slug: 'frontend',
       name: 'Frontend',
       description: 'Interfaces modernas, responsivas e com foco em experiência do usuário.',
       tags: ['Angular', 'React', 'TypeScript', 'Tailwind CSS'],
@@ -67,6 +70,7 @@ export class MinhasStacks {
         }
     },
     {
+      slug: 'devops',
       name: 'DevOps',
       description: 'CI/CD, containers, cloud e infraestrutura como código.',
       tags: ['Docker', 'Kubernetes', 'GitHub Actions', 'Terraform'],
@@ -79,8 +83,9 @@ export class MinhasStacks {
         }
     },
     {
+      slug: 'mensageria',
       name: 'Mensageria',
-      description: 'CI/CD, containers, cloud e infraestrutura como código.',
+      description: 'Comunicação assíncrona, filas e integração resiliente entre serviços.',
       tags: ['Kafka', 'RabbitMQ', 'ActiveMQ', 'Amazon SQS'],
       icon: 'icon/mensageria.png',
         credit: {
@@ -91,6 +96,7 @@ export class MinhasStacks {
         }
     },
     {
+      slug: 'database',
       name: 'DataBase',
       description: 'Bancos de dados relacionais e não relacionais.',
       tags: ['PostgreSQL', 'MySQL', 'MongoDB', 'Redis'],
@@ -103,6 +109,7 @@ export class MinhasStacks {
         }
     },
     {
+      slug: 'ia-machine-learning',
       name: 'IA e Machine Learning',
       description: 'Inteligência artificial e aprendizado de máquina para desenvolvimento de soluções inteligentes.',
       tags: ['Python', 'TensorFlow', 'PyTorch', 'Scikit-learn'],
@@ -115,6 +122,7 @@ export class MinhasStacks {
         }
     },
     {
+      slug: 'ferramentas',
       name: 'Ferramentas',
       description: 'Produtividade, versionamento e colaboração em equipe.',
       tags: ['Git', 'VS Code', 'Jira', 'Slack', 'Notion'],
