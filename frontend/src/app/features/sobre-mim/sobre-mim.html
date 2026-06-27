@@ -8,7 +8,14 @@
     <div class="sobre-content">
       <div class="sobre-image animate-fade-in-up delay-2">
         <div class="carousel-wrapper">
-          <div class="carousel-container" (mouseenter)="pauseCarousel()" (mouseleave)="resumeCarousel()">
+          <div
+            class="carousel-container"
+            (mouseenter)="pauseCarousel()"
+            (mouseleave)="resumeCarousel()"
+            (touchstart)="onTouchStart($event)"
+            (touchend)="onTouchEnd($event)"
+            (touchcancel)="onTouchCancel()"
+          >
             <div class="carousel-slides" [style.transform]="'translateX(-' + (currentSlide * 100) + '%)'">
               <div class="carousel-slide" *ngFor="let item of carouselItems">
                 <img [src]="item.image" [alt]="item.descricao" loading="lazy" />
@@ -31,6 +38,10 @@
               [attr.aria-label]="'Slide ' + (i + 1)">
             </button>
           </div>
+          <p class="swipe-hint" aria-hidden="true">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 8l-4 4 4 4M17 8l4 4-4 4M3 12h18"/></svg>
+            Arraste para ver mais fotos
+          </p>
         </div>
       </div>
       <div class="sobre-texto animate-fade-in-up delay-3">

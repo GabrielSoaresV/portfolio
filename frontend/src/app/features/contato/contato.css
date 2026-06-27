@@ -197,3 +197,9 @@
     gap: 40px;
   }
 }
+
+@media (max-width: 450px) {
+  .contato {
+    padding: 45px 24px;
+  }
+}

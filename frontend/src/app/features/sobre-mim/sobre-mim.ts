@@ -13,6 +13,8 @@ interface CarouselItem {
 })
 export class SobreMim implements OnInit, OnDestroy {
   currentSlide = 0;
+  private touchStartX = 0;
+  private touchStartY = 0;
 
   constructor(private cdr: ChangeDetectorRef) {}
 
@@ -79,5 +81,35 @@ export class SobreMim implements OnInit, OnDestroy {
 
   goToSlide(index: number): void {
     this.currentSlide = index;
+  }
+
+  onTouchStart(event: TouchEvent): void {
+    if (!this.isMobileViewport() || event.touches.length !== 1) return;
+
+    this.touchStartX = event.touches[0].clientX;
+    this.touchStartY = event.touches[0].clientY;
+    this.pauseCarousel();
+  }
+
+  onTouchEnd(event: TouchEvent): void {
+    if (!this.isMobileViewport() || !event.changedTouches.length) return;
+
+    const distanceX = event.changedTouches[0].clientX - this.touchStartX;
+    const distanceY = event.changedTouches[0].clientY - this.touchStartY;
+    const minimumSwipeDistance = 45;
+
+    if (Math.abs(distanceX) >= minimumSwipeDistance && Math.abs(distanceX) > Math.abs(distanceY)) {
+      distanceX < 0 ? this.nextSlide() : this.prevSlide();
+    }
+
+    this.resumeCarousel();
+  }
+
+  onTouchCancel(): void {
+    if (this.isMobileViewport()) this.resumeCarousel();
+  }
+
+  private isMobileViewport(): boolean {
+    return window.matchMedia('(max-width: 768px)').matches;
   }
 }

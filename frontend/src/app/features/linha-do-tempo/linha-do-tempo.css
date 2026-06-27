@@ -211,3 +211,9 @@
     max-width: 100%;
   }
 }
+
+@media (max-width: 450px) {
+  .timeline {
+    padding: 45px 24px;
+  }
+}

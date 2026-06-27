@@ -231,6 +231,11 @@
   animation: scroll-wheel 1.5s ease-in-out infinite;
 }
 
+.touch-gesture,
+.mobile-scroll-label {
+  display: none;
+}
+
 @keyframes scroll-wheel {
   0% { opacity: 1; transform: translateY(0); }
   100% { opacity: 0; transform: translateY(8px); }
@@ -272,4 +277,74 @@
     margin-left: auto;
     margin-right: auto;
   }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding-bottom: 32px;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 9vw, 2.4rem);
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .scroll-indicator {
+    position: static;
+    order: 3;
+    transform: none;
+    margin-top: 28px;
+    gap: 4px;
+    animation: none;
+  }
+
+  .mouse,
+  .desktop-scroll-label {
+    display: none;
+  }
+
+  .touch-gesture {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 54px;
+    color: #94a3b8;
+  }
+
+  .touch-finger {
+    position: relative;
+    z-index: 1;
+    animation: finger-scroll-down 1.8s ease-in-out infinite;
+  }
+
+  .touch-arrow {
+    position: absolute;
+    bottom: 0;
+    color: #60a5fa;
+    animation: touch-arrow-pulse 1.8s ease-in-out infinite;
+  }
+
+  .mobile-scroll-label {
+    display: inline;
+    font-size: 0.68rem;
+    letter-spacing: 0.2px;
+  }
+}
+
+@keyframes finger-scroll-down {
+  0% { opacity: 0; transform: translateY(-7px); }
+  20% { opacity: 1; }
+  70% { opacity: 1; transform: translateY(6px); }
+  100% { opacity: 0; transform: translateY(9px); }
+}
+
+@keyframes touch-arrow-pulse {
+  0%, 25% { opacity: 0.25; transform: translateY(-2px); }
+  65% { opacity: 1; transform: translateY(2px); }
+  100% { opacity: 0.25; transform: translateY(4px); }
 }

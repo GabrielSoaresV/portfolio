@@ -433,3 +433,9 @@
     max-height: 85vh;
   }
 }
+
+@media (max-width: 450px) {
+  .feedbacks {
+    padding: 45px 24px;
+  }
+}

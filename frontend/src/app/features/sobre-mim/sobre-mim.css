@@ -151,6 +151,10 @@
   gap: 8px;
 }
 
+.swipe-hint {
+  display: none;
+}
+
 .dot {
   width: 10px;
   height: 10px;
@@ -246,5 +250,32 @@
   }
   .sobre-texto {
     text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-container {
+    touch-action: pan-y;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  .carousel-btn,
+  .carousel-dots {
+    display: none;
+  }
+
+  .swipe-hint {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: #64748b;
+    font-size: 0.76rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .sobre {
+    padding: 45px 24px;
   }
 }

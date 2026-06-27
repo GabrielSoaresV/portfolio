@@ -284,3 +284,9 @@
     font-weight: 600;
   }
 }
+
+@media (max-width: 450px) {
+  .stacks {
+    padding: 45px 24px;
+  }
+}

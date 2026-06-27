@@ -135,3 +135,9 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 450px) {
+  .experiencia {
+    padding: 45px 24px;
+  }
+}
