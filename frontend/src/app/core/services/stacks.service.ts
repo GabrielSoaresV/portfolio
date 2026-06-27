@@ -40,7 +40,7 @@ export class StacksService {
       subcategories: [
         {
           slug: 'java',
-          name: 'Java',
+          name: 'Java & Spring Boot',
           eyebrow: 'Ecossistema Java',
           description: 'Desenvolvimento de APIs e aplicações empresariais robustas, seguras e preparadas para crescer.',
           experience: ['APIs REST com contratos bem definidos', 'Autenticação e autorização com JWT/OAuth2', 'Persistência e modelagem de dados', 'Testes, documentação e automação de builds'],
@@ -103,6 +103,67 @@ export class StacksService {
       ]
     },
     {
+      slug: 'arquitetura',
+      name: 'Arquitetura',
+      description: 'Estruturação de sistemas escaláveis, desacoplados e de fácil manutenção.',
+      icon: 'icon/arquitetura.png',
+      tags: ['Clean Architecture', 'Microsserviços', 'Design Patterns', 'Ports & Adapters'],
+      subcategories: [
+        {
+          slug: 'clean-architecture',
+          name: 'Clean Architecture',
+          eyebrow: 'Arquitetura em camadas',
+          description: 'Organização do sistema com separação clara de responsabilidades, regras de negócio independentes e baixo acoplamento.',
+          experience: ['Separação entre domínio, aplicação e infraestrutura', 'Inversão de dependências', 'Casos de uso independentes do framework', 'Entidades orientadas ao domínio'],
+          technologies: [
+            { name: 'Use Cases', description: 'Centralização das regras de negócio.' },
+            { name: 'Domain', description: 'Entidades e regras independentes de infraestrutura.' },
+            { name: 'Dependency Inversion', description: 'Dependências apontando para abstrações.' },
+            { name: 'DTOs', description: 'Transferência de dados entre camadas.' }
+          ], projectSlugs: ['stock-control']
+        },
+        {
+          slug: 'ports-adapters',
+          name: 'Ports & Adapters',
+          eyebrow: 'Arquitetura Hexagonal',
+          description: 'Isolamento do domínio através de portas e adaptadores, permitindo trocar tecnologias sem afetar as regras de negócio.',
+          experience: ['Interfaces para acesso a serviços', 'Repositórios desacoplados', 'Adaptadores de entrada e saída', 'Facilidade para testes'],
+          technologies: [
+            { name: 'Ports', description: 'Contratos utilizados pelo domínio.' },
+            { name: 'Adapters', description: 'Implementações de infraestrutura.' },
+            { name: 'Repositories', description: 'Persistência desacoplada.' },
+            { name: 'Dependency Injection', description: 'Resolução das implementações.' }
+          ], projectSlugs: ['stock-control']
+        },
+        {
+          slug: 'design-patterns',
+          name: 'Design Patterns',
+          eyebrow: 'Boas práticas',
+          description: 'Aplicação de padrões de projeto para tornar o código mais reutilizável, extensível e de fácil manutenção.',
+          experience: ['Padrões comportamentais', 'Padrões estruturais', 'Padrões criacionais', 'Refatoração orientada a padrões' ],
+          technologies: [
+            { name: 'Strategy', description: 'Troca dinâmica de comportamentos.' },
+            { name: 'Factory', description: 'Criação desacoplada de objetos.' },
+            { name: 'Builder', description: 'Construção de objetos complexos.' },
+            { name: 'Observer', description: 'Comunicação baseada em eventos.' }
+          ], projectSlugs: ['stock-control']
+        },
+        {
+          slug: 'microservices',
+          name: 'Microsserviços',
+          eyebrow: 'Arquitetura distribuída',
+          description: 'Conhecimento sobre divisão de sistemas em serviços independentes, comunicação e escalabilidade.',
+          experience: [ 'Separação por domínio', 'Comunicação entre serviços', 'APIs independentes', 'Escalabilidade horizontal' ],
+          technologies: [
+            { name: 'REST', description: 'Comunicação síncrona entre serviços.' },
+            { name: 'API Gateway', description: 'Ponto único de entrada.' },
+            { name: 'Service Discovery', description: 'Localização dinâmica de serviços.' },
+            { name: 'Mensageria', description: 'Comunicação assíncrona baseada em eventos.' }
+          ], projectSlugs: []
+        }
+      ]
+    },
+    {
       slug: 'devops', name: 'DevOps',
       description: 'CI/CD, containers, cloud e infraestrutura como código.',
       icon: 'icon/devops.png', tags: ['Docker', 'Kubernetes', 'GitHub Actions', 'Terraform'],
@@ -145,6 +206,66 @@ export class StacksService {
       ]
     },
     {
+      slug: 'testes',
+      name: 'Testes',
+      description: 'Desenvolvimento de testes automatizados para garantir qualidade, estabilidade e confiabilidade das aplicações.',
+      icon: 'icon/teste.png',
+      tags: ['Testes Unitários', 'Integração', 'E2E', 'TDD'],
+      subcategories: [
+        {
+          slug: 'java',
+          name: 'Java',
+          eyebrow: 'Spring Boot e aplicações corporativas',
+          description: 'Testes automatizados para APIs REST, microsserviços e aplicações Java.',
+          experience: ['Testes unitários', 'Testes de integração', 'Testes End-to-End', 'Validação de APIs REST'],
+          technologies: [
+            { name: 'JUnit 5', description: 'Framework para testes unitários e de integração.' },
+            { name: 'AssertJ', description: 'Asserções fluentes e legíveis.' },
+            { name: 'Mockito', description: 'Criação de mocks e isolamento de dependências.' },
+            { name: 'Selenium', description: 'Automação de testes para aplicações web.' }
+          ], projectSlugs: []
+        },
+        {
+          slug: 'javascript-typescript',
+          name: 'JavaScript / TypeScript',
+          eyebrow: 'Aplicações Web',
+          description: 'Testes para SPAs, aplicações web modernas e APIs desenvolvidas com JavaScript e TypeScript.',
+          experience: ['Testes unitários', 'Testes de integração', 'Testes End-to-End', 'Automação de interface'],
+          technologies: [
+            { name: 'Jest', description: 'Framework para testes unitários.' },
+            { name: 'Vitest', description: 'Framework moderno para testes rápidos.' },
+            { name: 'Playwright', description: 'Automação E2E para aplicações web.' },
+            { name: 'Cypress', description: 'Testes End-to-End para SPAs.' }
+          ], projectSlugs: []
+        },
+        {
+          slug: 'python',
+          name: 'Python',
+          eyebrow: 'Backend e Automação',
+          description: 'Testes automatizados para APIs, automações e aplicações desenvolvidas em Python.',
+          experience: ['Testes unitários', 'Testes funcionais', 'Automação de testes', 'Testes End-to-End'],
+          technologies: [
+            { name: 'pytest', description: 'Framework para testes unitários e funcionais.' },
+            { name: 'Playwright', description: 'Automação E2E para aplicações web.' },
+            { name: 'Selenium', description: 'Automação de navegadores para testes web.' }
+          ], projectSlugs: []
+        },
+        {
+          slug: 'dotnet',
+          name: '.NET / C#',
+          eyebrow: 'Aplicações Enterprise',
+          description: 'Testes automatizados para aplicações corporativas, APIs Web e sistemas desenvolvidos em .NET.',
+          experience: ['Testes unitários', 'Testes de integração', 'Automação de interface', 'Validação de APIs'],
+          technologies: [
+            { name: 'xUnit', description: 'Framework moderno para testes em .NET.' },
+            { name: 'NUnit', description: 'Framework tradicional para testes automatizados.' },
+            { name: 'Playwright', description: 'Automação E2E para aplicações web.' },
+            { name: 'Selenium', description: 'Automação de testes em navegadores.' }
+          ], projectSlugs: []
+        }
+      ]
+    },
+    {
       slug: 'database', name: 'DataBase',
       description: 'Bancos de dados relacionais, não relacionais e estratégias de cache.',
       icon: 'icon/database.png', tags: ['PostgreSQL', 'MySQL', 'MongoDB', 'Redis'],
@@ -162,6 +283,41 @@ export class StacksService {
           experience: ['Documentos e agregações', 'Estratégias de cache', 'Expiração e invalidação', 'Persistência para alto volume'],
           technologies: [{ name: 'MongoDB', description: 'Documentos, índices e aggregation pipeline.' }, { name: 'Redis', description: 'Cache, sessões e estruturas em memória.' }],
           projectSlugs: ['ecommerce-premium', 'app-gestao']
+        }
+      ]
+    },
+    {
+      slug: 'cloud',
+      name: 'Cloud',
+      description: 'Conhecimentos em plataformas de computação em nuvem para hospedagem, armazenamento e gerenciamento de aplicações.',
+      icon: 'icon/cloud.png',
+      tags: ['AWS', 'Azure'],
+      subcategories: [
+        {
+          slug: 'aws',
+          name: 'AWS',
+          eyebrow: 'Amazon Web Services',
+          description: 'Serviços em nuvem para desenvolvimento, implantação e gerenciamento de aplicações escaláveis.',
+          experience: ['Computação em nuvem', 'Armazenamento de arquivos', 'Bancos de dados gerenciados', 'Controle de acesso e permissões'],
+          technologies: [
+            { name: 'EC2', description: 'Instâncias de computação para hospedagem de aplicações.' },
+            { name: 'S3', description: 'Armazenamento escalável de objetos e arquivos.' },
+            { name: 'RDS', description: 'Serviço gerenciado de banco de dados relacional.' },
+            { name: 'IAM', description: 'Gerenciamento de identidades, usuários e permissões.' }
+          ], projectSlugs: []
+        },
+        {
+          slug: 'azure',
+          name: 'Azure',
+          eyebrow: 'Microsoft Azure',
+          description: 'Plataforma de computação em nuvem voltada para aplicações corporativas e serviços gerenciados.',
+          experience: ['Hospedagem de aplicações', 'Máquinas virtuais', 'Serviços de banco de dados', 'Armazenamento em nuvem'],
+          technologies: [
+            { name: 'Azure App Service', description: 'Hospedagem de aplicações web e APIs.' },
+            { name: 'Azure Virtual Machines', description: 'Infraestrutura virtual em nuvem.' },
+            { name: 'Azure SQL Database', description: 'Banco de dados relacional gerenciado.' },
+            { name: 'Azure Storage', description: 'Serviço de armazenamento de arquivos e objetos.' }
+          ], projectSlugs: []
         }
       ]
     },

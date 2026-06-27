@@ -70,6 +70,19 @@ export class MinhasStacks {
         }
     },
     {
+      slug: 'arquitetura',
+      name: 'Arquitetura',
+      description: 'Design e estruturação de sistemas complexos.',
+      tags: ['Clean Architecture', 'Microsserviços', 'Design Patterns', 'Ports & Adapters'],
+      icon: 'icon/arquitetura.png',
+        credit: {
+          author: 'Icon home',
+          platform: 'Flaticon',
+          url: 'https://www.flaticon.com/br/icone-gratis/architechture_5738037?term=arquitetura+de+software&page=1&position=1&origin=tag&related_id=5738037',
+          license: 'license/license-icon-arquitetura.pdf'
+        }
+    },
+    {
       slug: 'devops',
       name: 'DevOps',
       description: 'CI/CD, containers, cloud e infraestrutura como código.',
@@ -96,6 +109,19 @@ export class MinhasStacks {
         }
     },
     {
+      slug: 'testes',
+      name: 'Testes',
+      description: 'Automatização de testes e validação de funcionalidades.',
+      tags: ['JUnit', 'Vitest', 'Selenium', 'NUnit', 'Postman', 'Swagger'],
+      icon: 'icon/teste.png',
+        credit: {
+          author: 'Freepik',
+          platform: 'Flaticon',
+          url: 'https://www.flaticon.com/br/icone-gratis/teste_744320?term=testes&page=1&position=4&origin=search&related_id=744320',
+          license: 'license/license-icon-teste.pdf'
+        }
+    },
+    {
       slug: 'database',
       name: 'DataBase',
       description: 'Bancos de dados relacionais e não relacionais.',
@@ -106,6 +132,19 @@ export class MinhasStacks {
           platform: 'Flaticon',
           url: 'https://www.flaticon.com/br/icone-gratis/arquivo-de-banco-de-dados_4233336',
           license: 'license/license-icon-database.pdf'
+        }
+    },
+    {
+      slug: 'cloud',
+      name: 'Cloud',
+      description: 'Conhecimentos em plataformas de computação em nuvem para hospedagem, armazenamento e gerenciamento de aplicações.',
+      tags: ['AWS', 'Azure'],
+      icon: 'icon/cloud.png',
+        credit: {
+          author: 'iconmas',
+          platform: 'Flaticon',
+          url: 'https://www.flaticon.com/br/icone-gratis/computacao-em-nuvem_10349470?related_id=10349470',
+          license: 'license/license-icon-cloud.pdf'
         }
     },
     {
