@@ -8,7 +8,19 @@
     <div class="stacks-grid" [class.collapsed]="!expandido">
       <div class="stack-card animate-fade-in-up" *ngFor="let stack of stacks; let i = index" [style.animationDelay]="(i * 0.1 + 0.3) + 's'">
         <div class="stack-icon">
-          <img [src]="stack.icon" [alt]="stack.name"></div>
+          <img [src]="stack.icon" [alt]="stack.name">
+
+            <button class="credit-btn" (click)="toggleCredit(i); $event.stopPropagation()">ⓘ</button>
+
+            <div class="credit-popup" *ngIf="openedCard === i" (click)="$event.stopPropagation()">
+
+                <strong>Créditos do Icone</strong>
+                <span><b>Autor:</b> {{ stack.credit?.author }}</span>
+                <span><b>Plataforma:</b> {{ stack.credit?.platform }}</span>
+                <span><b>Licença: </b><a [href]="stack.credit?.license" target="_blank" rel="noopener noreferrer">Vizualizar</a></span>
+                <span><b>URL: </b><a [href]="stack.credit?.url" target="_blank" rel="noopener noreferrer">Ver origem</a></span>
+            </div>
+        </div>
         <h3 class="stack-name">{{ stack.name }}</h3>
         <p class="stack-desc">{{ stack.description }}</p>
         <div class="stack-tags">
