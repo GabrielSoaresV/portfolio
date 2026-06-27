@@ -31,6 +31,16 @@
           </a>
         </div>
       </div>
+
+      <div class="projeto-progresso" role="progressbar" aria-label="Progresso do projeto" aria-valuemin="1" aria-valuemax="100" [attr.aria-valuenow]="progressoProjeto">
+        <div class="progresso-header">
+          <span>Progresso do projeto</span>
+          <strong>{{ progressoProjeto }}%</strong>
+        </div>
+        <div class="progresso-track">
+          <div class="progresso-fill" [style.width.%]="progressoProjeto"></div>
+        </div>
+      </div>
     </div>
   </div>
 

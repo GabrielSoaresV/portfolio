@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 export interface ProjetoDetalhado {
   slug: string;
+  barraProgresso: number;
   title: string;
   description: string;
   shortDesc: string;
@@ -34,6 +35,7 @@ export class ProjetosService {
   private projetos: ProjetoDetalhado[] = [
     {
       slug: 'ecommerce-premium',
+      barraProgresso: 61,
       title: 'E-commerce Premium',
       shortDesc: 'Plataforma de e-commerce completa com carrinho, checkout, painel administrativo e integração com gateway de pagamento.',
       description: 'Uma plataforma de e-commerce de alta performance desenvolvida para uma loja de eletrônicos que precisava escalar suas vendas online. O sistema foi construído com foco em conversão, performance e experiência do usuário.',
@@ -81,6 +83,7 @@ export class ProjetosService {
     },
     {
       slug: 'dashboard-analytics',
+      barraProgresso: 85,
       title: 'Dashboard Analytics',
       shortDesc: 'Painel de analytics em tempo real com gráficos interativos, relatórios personalizados e exportação de dados.',
       description: 'Dashboard de analytics em tempo real para uma empresa de marketing digital que precisava consolidar métricas de múltiplas fontes em um único painel visual e interativo.',
@@ -128,6 +131,7 @@ export class ProjetosService {
     },
     {
       slug: 'app-gestao',
+      barraProgresso: 70,
       title: 'App de Gestão',
       shortDesc: 'Aplicativo mobile para gestão de equipes e tarefas com notificações push e sincronização offline.',
       description: 'Aplicativo mobile completo para gestão de equipes de campo em uma construtora, com foco em sincronização offline e geolocalização para acompanhamento de atividades.',
@@ -175,6 +179,7 @@ export class ProjetosService {
     },
     {
       slug: 'saas-automacao',
+      barraProgresso: 65,
       title: 'SaaS de Automação',
       shortDesc: 'Ferramenta SaaS para automação de workflows com integrações a mais de 50 serviços externos.',
       description: 'Plataforma SaaS de automação de workflows que permite criar fluxos de trabalho visuais conectando diversos serviços, similar ao Zapier mas com foco em empresas brasileiras.',
@@ -222,6 +227,7 @@ export class ProjetosService {
     },
     {
       slug: 'portal-cursos',
+      barraProgresso: 90,
       title: 'Portal de Cursos',
       shortDesc: 'Plataforma de ensino online com aulas em vídeo, quizzes, certificados e fórum de discussão.',
       description: 'Plataforma completa de ensino a distância desenvolvida para uma instituição de educação tecnológica, com suporte a aulas ao vivo, certificação automática e comunidade de alunos.',
@@ -269,6 +275,7 @@ export class ProjetosService {
     },
     {
       slug: 'api-microservicos',
+      barraProgresso: 80,
       title: 'API de Microserviços',
       shortDesc: 'Arquitetura de microserviços escalável com gateway, service discovery e observabilidade completa.',
       description: 'Arquitetura de microserviços completa desenvolvida para uma fintech que precisava de alta disponibilidade, escalabilidade automática e observabilidade total de seus serviços financeiros.',

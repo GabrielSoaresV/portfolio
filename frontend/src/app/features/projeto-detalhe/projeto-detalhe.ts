@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProjetosService, ProjetoDetalhado } from '../../core/services/projetos.service';
 
@@ -11,11 +12,17 @@ import { ProjetosService, ProjetoDetalhado } from '../../core/services/projetos.
 export class ProjetoDetalhe implements OnInit {
   projeto!: ProjetoDetalhado;
   activeTab: 'descricao' | 'documentacao' | 'galeria' = 'descricao';
+  barraProgresso = 1;
+
+  get progressoProjeto(): number {
+    return Math.min(100, Math.max(1, this.barraProgresso));
+  }
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private projetosService: ProjetosService
+    private projetosService: ProjetosService,
+    private location: Location
   ) {}
 
   ngOnInit(): void {
@@ -24,6 +31,7 @@ export class ProjetoDetalhe implements OnInit {
       const found = this.projetosService.getBySlug(slug);
       if (found) {
         this.projeto = found;
+        this.barraProgresso = found.barraProgresso;
       } else {
         this.router.navigate(['/']);
       }
@@ -35,6 +43,11 @@ export class ProjetoDetalhe implements OnInit {
   }
 
   goBack(): void {
-    this.router.navigate(['/']);
+    if (window.history.length > 1) {
+      this.location.back();
+      return;
+    }
+
+    this.router.navigate(['/'], { fragment: 'projetos' });
   }
 }

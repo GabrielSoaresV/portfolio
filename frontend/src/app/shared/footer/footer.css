@@ -27,8 +27,8 @@
 
 .footer-content {
   display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  gap: 64px;
+  grid-template-columns: minmax(260px, 1fr) minmax(0, 1.8fr);
+  gap: 48px;
   padding: 48px 0;
 }
 
@@ -88,7 +88,7 @@
 
 .footer-links {
   display: flex;
-  gap: 48px;
+  gap: 36px;
   justify-content: flex-end;
 }
 
