@@ -10,7 +10,7 @@
       <a class="projeto-card animate-fade-in-up" *ngFor="let projeto of projetos; let i = index" [routerLink]="['/projetos', projeto.slug]" [style.animationDelay]="(i * 0.1 + 0.3) + 's'">
         <div class="projeto-image">
           <div class="projeto-placeholder">
-            <span class="projeto-letter">{{ projeto.letter }}</span>
+            <img class="projeto-coverCard" [src]="projeto.coverCard" [alt]="projeto.title"/>
           </div>
           <div class="projeto-overlay">
             <span class="projeto-link">

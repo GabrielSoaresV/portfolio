@@ -8,7 +8,8 @@ export interface ProjetoDetalhado {
   descriptionDetalhes: string;
   shortDesc: string;
   tags: string[];
-  letter: string;
+  coverCard: string;
+  icon: string;
   link: string;
   repo: string;
   docs: string;
@@ -42,7 +43,8 @@ export class ProjetosService {
       descriptionCard: 'Desenvolvido para uma instituição social sem fins lucrativos, o SINCA substituiu processos manuais por uma plataforma integrada de gestão, aumentando a eficiência e a segurança das operações da Casa Azul Felipe Augusto.',
       descriptionDetalhes: 'projects/sinca/descricao.html',
       tags: ['Angular', 'Java', 'PostgreSQL', 'Spring Boot', 'Docker'],
-      letter: 'S',
+      coverCard: 'projects/sinca/gif/teste1.gif',
+      icon: 'projects/sinca/gif/inca-icon2.png',
       link: 'https://ecommerce-demo.vercel.app',
       repo: 'https://github.com/GabrielSoaresV/SINCA.git',
       docs: 'https://docs.ecommerce-demo.vercel.app',
@@ -91,7 +93,8 @@ export class ProjetosService {
       descriptionCard: 'Dashboard de analytics em tempo real para uma empresa de marketing digital que precisava consolidar métricas de múltiplas fontes em um único painel visual e interativo.',
       descriptionDetalhes: 'Dashboard de analytics em tempo real para uma empresa de marketing digital que precisava consolidar métricas de múltiplas fontes em um único painel visual e interativo.',
       tags: ['React', 'TypeScript', 'D3.js', 'Firebase'],
-      letter: 'D',
+      coverCard: 'D',
+      icon: 'projects/sinca/gif/inca-icon2.png',
       link: 'https://analytics-demo.vercel.app',
       repo: 'https://github.com/dev/dashboard-analytics',
       docs: 'https://docs.analytics-demo.vercel.app',
@@ -140,7 +143,8 @@ export class ProjetosService {
       descriptionCard: 'Aplicativo mobile para gestão de equipes e tarefas com notificações push e sincronização offline.',
       descriptionDetalhes: 'Aplicativo mobile completo para gestão de equipes de campo em uma construtora, com foco em sincronização offline e geolocalização para acompanhamento de atividades.',
       tags: ['React Native', 'Redux', 'Node.js', 'MongoDB'],
-      letter: 'A',
+      coverCard: 'A',
+      icon: 'projects/sinca/gif/inca-icon2.png',
       link: 'https://appgestao-demo.vercel.app',
       repo: 'https://github.com/dev/app-gestao',
       docs: 'https://docs.appgestao-demo.vercel.app',
@@ -189,7 +193,8 @@ export class ProjetosService {
       descriptionCard: 'Plataforma SaaS de automação de workflows que permite criar fluxos de trabalho visuais conectando diversos serviços, similar ao Zapier mas com foco em empresas brasileiras.',
       descriptionDetalhes: 'Plataforma SaaS de automação de workflows que permite criar fluxos de trabalho visuais conectando diversos serviços, similar ao Zapier mas com foco em empresas brasileiras.',
       tags: ['Vue.js', 'Python', 'AWS', 'Docker'],
-      letter: 'S',
+      coverCard: 'S',
+      icon: 'projects/sinca/gif/inca-icon2.png',
       link: 'https://automacao-demo.vercel.app',
       repo: 'https://github.com/dev/saas-automacao',
       docs: 'https://docs.automacao-demo.vercel.app',
@@ -238,7 +243,8 @@ export class ProjetosService {
       descriptionCard: 'Plataforma completa de ensino a distância desenvolvida para uma instituição de educação tecnológica, com suporte a aulas ao vivo, certificação automática e comunidade de alunos.',
       descriptionDetalhes: 'Plataforma completa de ensino a distância desenvolvida para uma instituição de educação tecnológica, com suporte a aulas ao vivo, certificação automática e comunidade de alunos.',
       tags: ['Angular', 'Spring Boot', 'MySQL', 'WebRTC'],
-      letter: 'P',
+      coverCard: 'P',
+      icon: 'projects/sinca/gif/inca-icon2.png',
       link: 'https://cursos-demo.vercel.app',
       repo: 'https://github.com/dev/portal-cursos',
       docs: 'https://docs.cursos-demo.vercel.app',
@@ -287,7 +293,8 @@ export class ProjetosService {
       descriptionCard: 'Arquitetura de microserviços completa desenvolvida para uma fintech que precisava de alta disponibilidade, escalabilidade automática e observabilidade total de seus serviços financeiros.',
       descriptionDetalhes: 'Arquitetura de microserviços completa desenvolvida para uma fintech que precisava de alta disponibilidade, escalabilidade automática e observabilidade total de seus serviços financeiros.',
       tags: ['Go', 'gRPC', 'Kubernetes', 'Prometheus'],
-      letter: 'M',
+      coverCard: 'M',
+      icon: 'projects/sinca/gif/inca-icon2.png',
       link: 'https://microservicos-demo.vercel.app',
       repo: 'https://github.com/dev/api-microservicos',
       docs: 'https://docs.microservicos-demo.vercel.app',

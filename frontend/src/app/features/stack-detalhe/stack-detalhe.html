@@ -104,7 +104,7 @@
         <div class="section-heading"><div><span>Aplicação prática</span><h3>Projetos com {{ activeSubcategory.name }}</h3></div></div>
         <div class="projects-grid" *ngIf="projects.length; else noProjects">
           <a class="project-card" *ngFor="let project of projects" [routerLink]="['/projetos', project.slug]">
-            <div class="project-letter">{{ project.letter }}</div>
+            <div class="project-coverCard">{{ project.coverCard }}Teste</div>
             <div class="project-body">
               <h4>{{ project.title }}</h4>
               <p>{{ project.shortDesc }}</p>

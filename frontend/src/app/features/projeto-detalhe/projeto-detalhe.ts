@@ -18,6 +18,7 @@ export class ProjetoDetalhe implements OnInit {
   progressBar = 1;
   htmlDescription!: SafeHtml;
   isLoaded = false;
+  descricaoExpandida = false;
 
   get progressoProjeto(): number {
     return Math.min(100, Math.max(1, this.progressBar));

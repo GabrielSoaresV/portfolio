@@ -10,7 +10,7 @@
         Voltar
       </button>
       <div class="detalhe-hero-info">
-        <span class="detalhe-letter">{{ projeto.letter }}</span>
+        <img class="detalhe-coverCard" [src]="projeto.icon" [alt]="projeto.title"/>
         <h1 class="detalhe-title">{{ projeto.title }}</h1>
         <p class="detalhe-short">{{ projeto.shortDesc }}</p>
         <div class="detalhe-tags">
@@ -56,7 +56,7 @@
           Galeria
         </button>
         <button class="tab-btn" [class.active]="activeTab === 'documentacao'" (click)="setTab('documentacao')">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
           Documentação
         </button>
       </div>
@@ -68,18 +68,29 @@
       <div class="tab-panel" *ngIf="activeTab === 'descricao'">
         <div class="descricao-grid">
           <div class="descricao-main">
+
             <div class="content-block">
               <h2 class="block-title">Sobre o Projeto</h2>
-              <div *ngIf="isLoaded" class="block-text" [innerHTML]="htmlDescription"></div>
-            </div>
-            <div class="content-block">
-              <h2 class="block-title">Funcionalidades</h2>
-              <ul class="feature-list">
-                <li *ngFor="let func of projeto.funcionalidades">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                  {{ func }}
-                </li>
-              </ul>
+                <div class="descricao-wrapper" [class.expanded]="descricaoExpandida">
+                  <div *ngIf="isLoaded" class="block-text" [innerHTML]="htmlDescription"></div>
+                    <div class="fade-overlay"></div>
+                </div>
+
+                  <button class="btn-expandir" (click)="descricaoExpandida = !descricaoExpandida"> {{ descricaoExpandida ? 'Mostrar menos' : 'Ler descrição completa' }}
+                    <svg class="expand-icon" [class.rotacionado]="descricaoExpandida" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polyline points="6 9 12 15 18 9"/>
+                    </svg>
+                  </button>
+    
+              <div class="content-block">
+                <h2 class="block-title">Funcionalsidades</h2>
+                <ul class="feature-list">
+                  <li *ngFor="let func of projeto.funcionalidades">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    {{ func }}
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
           <div class="descricao-sidebar">
