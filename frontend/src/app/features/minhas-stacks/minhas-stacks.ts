@@ -1,4 +1,6 @@
-import { Component, HostListener } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, HostListener, OnInit } from '@angular/core';
+import { StackCertificate, StacksService } from '../../core/services/stacks.service';
 
 interface Stack {
   slug: string;
@@ -15,16 +17,46 @@ interface Stack {
   };
 }
 
+interface StackStats {
+  especialidades: number;
+  projetos: number;
+  certificados: number;
+}
+
 @Component({
   standalone: false,
   selector: 'app-minhas-stacks',
   templateUrl: './minhas-stacks.html',
   styleUrl: './minhas-stacks.css',
 })
-export class MinhasStacks {
+export class MinhasStacks implements OnInit {
   expandido = false;
-
   openedCard: number | null = null;
+  readonly stats: Record<string, StackStats> = {};
+  private readonly emptyStats: StackStats = { especialidades: 0, projetos: 0, certificados: 0 };
+
+  constructor(
+    private readonly stacksService: StacksService,
+    private readonly http: HttpClient
+  ) {
+    this.stacksService.getAll().forEach(category => {
+      const projetos = new Set(category.subcategories.flatMap(subcategory => subcategory.projectSlugs));
+      this.stats[category.slug] = {
+        especialidades: category.subcategories.length,
+        projetos: projetos.size,
+        certificados: 0
+      };
+    });
+  }
+
+  ngOnInit(): void {
+    this.http.get<StackCertificate[]>('certificados/certificados.json').subscribe({
+      next: certificates => certificates.forEach(certificate => {
+        const categoryStats = this.stats[certificate.category];
+        if (categoryStats) categoryStats.certificados++;
+      })
+    });
+  }
 
   toggle() {
     this.expandido = !this.expandido;
@@ -178,5 +210,13 @@ export class MinhasStacks {
   toggleCredit(index: number) {
     this.openedCard =
       this.openedCard === index ? null : index;
+  }
+
+  getStats(slug: string): StackStats {
+    return this.stats[slug] ?? this.emptyStats;
+  }
+
+  marqueeDuration(tagCount: number): string {
+    return `${Math.max(12, tagCount * 5.5)}s`;
   }
 }
