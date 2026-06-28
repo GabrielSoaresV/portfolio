@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { combineLatest } from 'rxjs';
 import { ProjetoDetalhado, ProjetosService } from '../../core/services/projetos.service';
 import { StackCategory, StackCertificate, StackSubcategory, StacksService } from '../../core/services/stacks.service';
+import { NavigationService } from '../../core/services/navigation.service';
 
 type DetailTab = 'visao-geral' | 'projetos' | 'certificados';
 
@@ -20,6 +21,7 @@ export class StackDetalhe implements OnInit {
   certificates: StackCertificate[] = [];
 
   constructor(
+    private navigationService: NavigationService,
     private readonly route: ActivatedRoute,
     private readonly router: Router,
     private readonly stacksService: StacksService,
@@ -77,6 +79,16 @@ export class StackDetalhe implements OnInit {
   }
 
   goBack(): void {
-    this.router.navigate(['/'], { fragment: 'stacks' });
+
+    const previous = this.navigationService.getPreviousUrl();
+
+    if (previous && previous !== this.router.url) {
+      this.router.navigateByUrl(previous);
+      return;
+    }
+
+    this.router.navigate(['/'], {
+      fragment: 'stacks'
+    });
   }
 }

@@ -2,9 +2,10 @@ import { Injectable } from '@angular/core';
 
 export interface ProjetoDetalhado {
   slug: string;
-  barraProgresso: number;
+  progressBar: number;
   title: string;
-  description: string;
+  descriptionCard: string;
+  descriptionMarkdown: string;
   shortDesc: string;
   tags: string[];
   letter: string;
@@ -34,11 +35,12 @@ export interface ProjetoDetalhado {
 export class ProjetosService {
   private projetos: ProjetoDetalhado[] = [
     {
-      slug: 'ecommerce-premium',
-      barraProgresso: 61,
-      title: 'E-commerce Premium',
-      shortDesc: 'Plataforma de e-commerce completa com carrinho, checkout, painel administrativo e integração com gateway de pagamento.',
-      description: 'Uma plataforma de e-commerce de alta performance desenvolvida para uma loja de eletrônicos que precisava escalar suas vendas online. O sistema foi construído com foco em conversão, performance e experiência do usuário.',
+      slug: 'sinca',
+      progressBar: 61,
+      title: 'SINCA - Sistema Integrado de Negócios e Controle Administrativo',
+      shortDesc: 'Plataforma unificada para gestão administrativa, processos internos, autenticação, calendário e comunicação organizacional.',
+      descriptionCard: 'Desenvolvido para uma instituição social sem fins lucrativos, o SINCA substituiu processos manuais por uma plataforma integrada de gestão, aumentando a eficiência e a segurança das operações da Casa Azul Felipe Augusto.',
+      descriptionMarkdown: 'projects/sinca/descricao.md',
       tags: ['Angular', 'Node.js', 'PostgreSQL', 'Stripe'],
       letter: 'E',
       link: 'https://ecommerce-demo.vercel.app',
@@ -83,10 +85,11 @@ export class ProjetosService {
     },
     {
       slug: 'dashboard-analytics',
-      barraProgresso: 85,
+      progressBar: 85,
       title: 'Dashboard Analytics',
       shortDesc: 'Painel de analytics em tempo real com gráficos interativos, relatórios personalizados e exportação de dados.',
-      description: 'Dashboard de analytics em tempo real para uma empresa de marketing digital que precisava consolidar métricas de múltiplas fontes em um único painel visual e interativo.',
+      descriptionCard: 'Dashboard de analytics em tempo real para uma empresa de marketing digital que precisava consolidar métricas de múltiplas fontes em um único painel visual e interativo.',
+      descriptionMarkdown: 'Dashboard de analytics em tempo real para uma empresa de marketing digital que precisava consolidar métricas de múltiplas fontes em um único painel visual e interativo.',
       tags: ['React', 'TypeScript', 'D3.js', 'Firebase'],
       letter: 'D',
       link: 'https://analytics-demo.vercel.app',
@@ -131,10 +134,11 @@ export class ProjetosService {
     },
     {
       slug: 'app-gestao',
-      barraProgresso: 70,
+      progressBar: 70,
       title: 'App de Gestão',
       shortDesc: 'Aplicativo mobile para gestão de equipes e tarefas com notificações push e sincronização offline.',
-      description: 'Aplicativo mobile completo para gestão de equipes de campo em uma construtora, com foco em sincronização offline e geolocalização para acompanhamento de atividades.',
+      descriptionCard: 'Aplicativo mobile para gestão de equipes e tarefas com notificações push e sincronização offline.',
+      descriptionMarkdown: 'Aplicativo mobile completo para gestão de equipes de campo em uma construtora, com foco em sincronização offline e geolocalização para acompanhamento de atividades.',
       tags: ['React Native', 'Redux', 'Node.js', 'MongoDB'],
       letter: 'A',
       link: 'https://appgestao-demo.vercel.app',
@@ -179,10 +183,11 @@ export class ProjetosService {
     },
     {
       slug: 'saas-automacao',
-      barraProgresso: 65,
+      progressBar: 65,
       title: 'SaaS de Automação',
       shortDesc: 'Ferramenta SaaS para automação de workflows com integrações a mais de 50 serviços externos.',
-      description: 'Plataforma SaaS de automação de workflows que permite criar fluxos de trabalho visuais conectando diversos serviços, similar ao Zapier mas com foco em empresas brasileiras.',
+      descriptionCard: 'Plataforma SaaS de automação de workflows que permite criar fluxos de trabalho visuais conectando diversos serviços, similar ao Zapier mas com foco em empresas brasileiras.',
+      descriptionMarkdown: 'Plataforma SaaS de automação de workflows que permite criar fluxos de trabalho visuais conectando diversos serviços, similar ao Zapier mas com foco em empresas brasileiras.',
       tags: ['Vue.js', 'Python', 'AWS', 'Docker'],
       letter: 'S',
       link: 'https://automacao-demo.vercel.app',
@@ -227,10 +232,11 @@ export class ProjetosService {
     },
     {
       slug: 'portal-cursos',
-      barraProgresso: 90,
+      progressBar: 90,
       title: 'Portal de Cursos',
       shortDesc: 'Plataforma de ensino online com aulas em vídeo, quizzes, certificados e fórum de discussão.',
-      description: 'Plataforma completa de ensino a distância desenvolvida para uma instituição de educação tecnológica, com suporte a aulas ao vivo, certificação automática e comunidade de alunos.',
+      descriptionCard: 'Plataforma completa de ensino a distância desenvolvida para uma instituição de educação tecnológica, com suporte a aulas ao vivo, certificação automática e comunidade de alunos.',
+      descriptionMarkdown: 'Plataforma completa de ensino a distância desenvolvida para uma instituição de educação tecnológica, com suporte a aulas ao vivo, certificação automática e comunidade de alunos.',
       tags: ['Angular', 'Spring Boot', 'MySQL', 'WebRTC'],
       letter: 'P',
       link: 'https://cursos-demo.vercel.app',
@@ -275,10 +281,11 @@ export class ProjetosService {
     },
     {
       slug: 'api-microservicos',
-      barraProgresso: 80,
+      progressBar: 80,
       title: 'API de Microserviços',
       shortDesc: 'Arquitetura de microserviços escalável com gateway, service discovery e observabilidade completa.',
-      description: 'Arquitetura de microserviços completa desenvolvida para uma fintech que precisava de alta disponibilidade, escalabilidade automática e observabilidade total de seus serviços financeiros.',
+      descriptionCard: 'Arquitetura de microserviços completa desenvolvida para uma fintech que precisava de alta disponibilidade, escalabilidade automática e observabilidade total de seus serviços financeiros.',
+      descriptionMarkdown: 'Arquitetura de microserviços completa desenvolvida para uma fintech que precisava de alta disponibilidade, escalabilidade automática e observabilidade total de seus serviços financeiros.',
       tags: ['Go', 'gRPC', 'Kubernetes', 'Prometheus'],
       letter: 'M',
       link: 'https://microservicos-demo.vercel.app',

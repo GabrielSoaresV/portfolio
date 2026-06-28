@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProjetosService, ProjetoDetalhado } from '../../core/services/projetos.service';
+import { NavigationService } from '../../core/services/navigation.service';
 
 @Component({
   standalone: false,
@@ -12,13 +13,14 @@ import { ProjetosService, ProjetoDetalhado } from '../../core/services/projetos.
 export class ProjetoDetalhe implements OnInit {
   projeto!: ProjetoDetalhado;
   activeTab: 'descricao' | 'documentacao' | 'galeria' = 'descricao';
-  barraProgresso = 1;
+  progressBar = 1;
 
   get progressoProjeto(): number {
-    return Math.min(100, Math.max(1, this.barraProgresso));
+    return Math.min(100, Math.max(1, this.progressBar));
   }
 
   constructor(
+    private navigationService: NavigationService,
     private route: ActivatedRoute,
     private router: Router,
     private projetosService: ProjetosService,
@@ -31,7 +33,7 @@ export class ProjetoDetalhe implements OnInit {
       const found = this.projetosService.getBySlug(slug);
       if (found) {
         this.projeto = found;
-        this.barraProgresso = found.barraProgresso;
+        this.progressBar = found.progressBar;
       } else {
         this.router.navigate(['/']);
       }
@@ -43,11 +45,16 @@ export class ProjetoDetalhe implements OnInit {
   }
 
   goBack(): void {
-    if (window.history.length > 1) {
-      this.location.back();
+
+    const previous = this.navigationService.getPreviousUrl();
+
+    if (previous && previous !== this.router.url) {
+      this.router.navigateByUrl(previous);
       return;
     }
 
-    this.router.navigate(['/'], { fragment: 'projetos' });
+    this.router.navigate(['/'], {
+      fragment: 'projetos'
+    });
   }
 }
