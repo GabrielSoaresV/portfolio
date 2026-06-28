@@ -70,7 +70,7 @@
           <div class="descricao-main">
             <div class="content-block">
               <h2 class="block-title">Sobre o Projeto</h2>
-              <markdown class="block-text" [src]="projeto.descriptionMarkdown"></markdown>
+              <div *ngIf="isLoaded" class="block-text" [innerHTML]="htmlDescription"></div>
             </div>
             <div class="content-block">
               <h2 class="block-title">Funcionalidades</h2>

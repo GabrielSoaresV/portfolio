@@ -1,0 +1,230 @@
+<style>
+.sinca-description {
+    color: var(--text-primary, #f3f4f6);
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
+.sinca-description section {
+    margin-bottom: 3rem;
+}
+
+.sinca-description h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+    border-left: 4px solid #3b82f6;
+    color: var(--text-primary, #fff);
+}
+
+.sinca-description p {
+    margin-bottom: 1rem;
+    text-align: justify;
+    color: var(--text-secondary, #cbd5e1);
+}
+
+.sinca-description ul {
+    margin: 1.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.sinca-description li {
+    margin-bottom: .75rem;
+    color: var(--text-secondary, #cbd5e1);
+}
+
+.sinca-description strong {
+    color: var(--text-primary, #fff);
+}
+
+.sinca-description .architecture {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.sinca-description .architecture-card {
+    flex: 1;
+    min-width: 180px;
+    padding: 1.25rem;
+    border-radius: 12px;
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(255,255,255,.08);
+}
+
+.sinca-description .architecture-card h3 {
+    margin-bottom: .5rem;
+    color: #60a5fa;
+    font-size: 1.1rem;
+}
+
+.sinca-description .architecture-card p {
+    margin: 0;
+    font-size: .95rem;
+}
+
+@media (max-width: 450px) {
+
+    .sinca-description {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .sinca-description h2 {
+        font-size: 1.5rem;
+        padding-left: .75rem;
+        margin-bottom: .75rem;
+    }
+
+    .sinca-description p,
+    .sinca-description li {
+        font-size: 0.9rem;
+    }
+
+    .sinca-description ul {
+        padding-left: 1.25rem;
+    }
+
+    .sinca-description section {
+        margin-bottom: 2rem;
+    }
+
+    .sinca-description .architecture {
+        flex-direction: column;
+        gap: .75rem;
+    }
+
+    .sinca-description .architecture-card {
+        min-width: auto;
+        padding: 1rem;
+    }
+
+    .sinca-description .architecture-card h3 {
+        font-size: 1rem;
+    }
+
+    .sinca-description .architecture-card p {
+        font-size: .9rem;
+    }
+}
+</style>
+
+<div class="sinca-description">
+
+<section>
+
+<h2>Visão Geral</h2>
+
+<p>
+O <strong>SINCA (Sistema Integrado de Negócios e Controle Administrativo)</strong> é uma plataforma web desenvolvida para modernizar, automatizar e centralizar os processos administrativos e educacionais da <strong>Casa Azul Felipe Augusto – Unidade Anexo</strong>, instituição do terceiro setor dedicada à formação, acompanhamento e inserção de jovens aprendizes no mercado de trabalho.
+</p>
+
+<p>
+A aplicação é executada em um servidor local conectado à rede interna da instituição, permitindo que toda a equipe administrativa e pedagógica acesse o sistema de forma integrada, segura e eficiente durante suas atividades diárias.
+</p>
+
+</section>
+
+<section>
+
+<h2>Contexto</h2>
+
+<p>
+A <strong>Casa Azul Felipe Augusto</strong> desempenha um importante papel social ao preparar jovens para o primeiro emprego por meio de cursos de capacitação, acompanhamento pedagógico, gestão de contratos de aprendizagem e conexão com empresas parceiras.
+</p>
+
+<p>
+Por ser uma organização sem fins lucrativos, mantida principalmente por doações, a instituição não dispunha de recursos para adquirir uma solução comercial especializada que atendesse às suas necessidades operacionais.
+</p>
+
+<p>
+Antes da implantação do SINCA, grande parte dos processos administrativos era realizada manualmente, utilizando planilhas eletrônicas e documentos físicos. O cadastro de jovens, empresas e cursos, o acompanhamento de avaliações, a geração de certificados, a elaboração de calendários institucionais, o controle de contratos e diversos outros procedimentos dependiam de tarefas repetitivas e descentralizadas, tornando o trabalho mais lento, suscetível a erros e dificultando a rastreabilidade das informações.
+</p>
+
+</section>
+
+<section>
+
+<h2>Objetivo</h2>
+
+<p>
+O SINCA foi desenvolvido para transformar essa realidade por meio da digitalização e automação dos processos institucionais.
+</p>
+
+<p>
+A plataforma centraliza informações, padroniza fluxos de trabalho e reduz a dependência de controles manuais, proporcionando maior eficiência operacional, confiabilidade dos dados e suporte às atividades administrativas e pedagógicas da instituição.
+</p>
+
+</section>
+
+<section>
+
+<h2>Funcionalidades</h2>
+
+<p>
+O sistema reúne módulos integrados responsáveis por:
+</p>
+
+<ul>
+    <li>Gestão de jovens aprendizes.</li>
+    <li>Gestão de empresas parceiras.</li>
+    <li>Controle de contratos de aprendizagem.</li>
+    <li>Gestão de avaliações periódicas.</li>
+    <li>Calendário institucional.</li>
+    <li>Gestão de demandas internas.</li>
+    <li>Comunicação entre colaboradores.</li>
+    <li>Autenticação e gerenciamento de usuários.</li>
+</ul>
+
+<p>
+Essa integração permite que diferentes setores da instituição trabalhem sobre uma base única de informações, aumentando a produtividade, reduzindo retrabalho e fortalecendo a segurança das informações.
+</p>
+
+</section>
+
+<section>
+
+<h2>Arquitetura</h2>
+
+<p>
+Além de atender às necessidades atuais da instituição, o SINCA foi concebido utilizando uma arquitetura moderna baseada nos seguintes princípios:
+</p>
+
+<div class="architecture">
+
+    <div class="architecture-card">
+        <h3>Domain-Driven Design</h3>
+        <p>Modelagem do domínio baseada nas regras de negócio e separação clara entre contexto e infraestrutura.</p>
+    </div>
+
+    <div class="architecture-card">
+        <h3>CQRS</h3>
+        <p>Separação entre operações de escrita e leitura para maior organização, desempenho e escalabilidade.</p>
+    </div>
+
+    <div class="architecture-card">
+        <h3>Arquitetura Hexagonal</h3>
+        <p>Baixo acoplamento entre domínio, infraestrutura e interfaces por meio do padrão Ports and Adapters.</p>
+    </div>
+
+</div>
+
+<p>
+Essa arquitetura proporciona alta manutenibilidade, facilidade de evolução e uma base sólida para o crescimento contínuo do sistema.
+</p>
+
+</section>
+
+<section>
+
+<h2>Impacto</h2>
+
+<p>
+Mais do que substituir processos manuais, o SINCA estabelece uma base tecnológica sólida para apoiar a missão social da <strong>Casa Azul Felipe Augusto</strong>, contribuindo para a qualificação profissional, inclusão social e inserção de jovens no mercado de trabalho por meio de uma gestão institucional mais eficiente, organizada e confiável.
+</p>
+
+</section>
+
+</div>

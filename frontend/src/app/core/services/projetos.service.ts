@@ -5,7 +5,7 @@ export interface ProjetoDetalhado {
   progressBar: number;
   title: string;
   descriptionCard: string;
-  descriptionMarkdown: string;
+  descriptionDetalhes: string;
   shortDesc: string;
   tags: string[];
   letter: string;
@@ -36,15 +36,15 @@ export class ProjetosService {
   private projetos: ProjetoDetalhado[] = [
     {
       slug: 'sinca',
-      progressBar: 61,
+      progressBar: 71,
       title: 'SINCA - Sistema Integrado de Negócios e Controle Administrativo',
       shortDesc: 'Plataforma unificada para gestão administrativa, processos internos, autenticação, calendário e comunicação organizacional.',
       descriptionCard: 'Desenvolvido para uma instituição social sem fins lucrativos, o SINCA substituiu processos manuais por uma plataforma integrada de gestão, aumentando a eficiência e a segurança das operações da Casa Azul Felipe Augusto.',
-      descriptionMarkdown: 'projects/sinca/descricao.md',
-      tags: ['Angular', 'Node.js', 'PostgreSQL', 'Stripe'],
-      letter: 'E',
+      descriptionDetalhes: 'projects/sinca/descricao.html',
+      tags: ['Angular', 'Java', 'PostgreSQL', 'Spring Boot', 'Docker'],
+      letter: 'S',
       link: 'https://ecommerce-demo.vercel.app',
-      repo: 'https://github.com/dev/ecommerce-premium',
+      repo: 'https://github.com/GabrielSoaresV/SINCA.git',
       docs: 'https://docs.ecommerce-demo.vercel.app',
       coverImage: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1200',
       detalhes: {
@@ -89,7 +89,7 @@ export class ProjetosService {
       title: 'Dashboard Analytics',
       shortDesc: 'Painel de analytics em tempo real com gráficos interativos, relatórios personalizados e exportação de dados.',
       descriptionCard: 'Dashboard de analytics em tempo real para uma empresa de marketing digital que precisava consolidar métricas de múltiplas fontes em um único painel visual e interativo.',
-      descriptionMarkdown: 'Dashboard de analytics em tempo real para uma empresa de marketing digital que precisava consolidar métricas de múltiplas fontes em um único painel visual e interativo.',
+      descriptionDetalhes: 'Dashboard de analytics em tempo real para uma empresa de marketing digital que precisava consolidar métricas de múltiplas fontes em um único painel visual e interativo.',
       tags: ['React', 'TypeScript', 'D3.js', 'Firebase'],
       letter: 'D',
       link: 'https://analytics-demo.vercel.app',
@@ -138,7 +138,7 @@ export class ProjetosService {
       title: 'App de Gestão',
       shortDesc: 'Aplicativo mobile para gestão de equipes e tarefas com notificações push e sincronização offline.',
       descriptionCard: 'Aplicativo mobile para gestão de equipes e tarefas com notificações push e sincronização offline.',
-      descriptionMarkdown: 'Aplicativo mobile completo para gestão de equipes de campo em uma construtora, com foco em sincronização offline e geolocalização para acompanhamento de atividades.',
+      descriptionDetalhes: 'Aplicativo mobile completo para gestão de equipes de campo em uma construtora, com foco em sincronização offline e geolocalização para acompanhamento de atividades.',
       tags: ['React Native', 'Redux', 'Node.js', 'MongoDB'],
       letter: 'A',
       link: 'https://appgestao-demo.vercel.app',
@@ -187,7 +187,7 @@ export class ProjetosService {
       title: 'SaaS de Automação',
       shortDesc: 'Ferramenta SaaS para automação de workflows com integrações a mais de 50 serviços externos.',
       descriptionCard: 'Plataforma SaaS de automação de workflows que permite criar fluxos de trabalho visuais conectando diversos serviços, similar ao Zapier mas com foco em empresas brasileiras.',
-      descriptionMarkdown: 'Plataforma SaaS de automação de workflows que permite criar fluxos de trabalho visuais conectando diversos serviços, similar ao Zapier mas com foco em empresas brasileiras.',
+      descriptionDetalhes: 'Plataforma SaaS de automação de workflows que permite criar fluxos de trabalho visuais conectando diversos serviços, similar ao Zapier mas com foco em empresas brasileiras.',
       tags: ['Vue.js', 'Python', 'AWS', 'Docker'],
       letter: 'S',
       link: 'https://automacao-demo.vercel.app',
@@ -236,7 +236,7 @@ export class ProjetosService {
       title: 'Portal de Cursos',
       shortDesc: 'Plataforma de ensino online com aulas em vídeo, quizzes, certificados e fórum de discussão.',
       descriptionCard: 'Plataforma completa de ensino a distância desenvolvida para uma instituição de educação tecnológica, com suporte a aulas ao vivo, certificação automática e comunidade de alunos.',
-      descriptionMarkdown: 'Plataforma completa de ensino a distância desenvolvida para uma instituição de educação tecnológica, com suporte a aulas ao vivo, certificação automática e comunidade de alunos.',
+      descriptionDetalhes: 'Plataforma completa de ensino a distância desenvolvida para uma instituição de educação tecnológica, com suporte a aulas ao vivo, certificação automática e comunidade de alunos.',
       tags: ['Angular', 'Spring Boot', 'MySQL', 'WebRTC'],
       letter: 'P',
       link: 'https://cursos-demo.vercel.app',
@@ -285,7 +285,7 @@ export class ProjetosService {
       title: 'API de Microserviços',
       shortDesc: 'Arquitetura de microserviços escalável com gateway, service discovery e observabilidade completa.',
       descriptionCard: 'Arquitetura de microserviços completa desenvolvida para uma fintech que precisava de alta disponibilidade, escalabilidade automática e observabilidade total de seus serviços financeiros.',
-      descriptionMarkdown: 'Arquitetura de microserviços completa desenvolvida para uma fintech que precisava de alta disponibilidade, escalabilidade automática e observabilidade total de seus serviços financeiros.',
+      descriptionDetalhes: 'Arquitetura de microserviços completa desenvolvida para uma fintech que precisava de alta disponibilidade, escalabilidade automática e observabilidade total de seus serviços financeiros.',
       tags: ['Go', 'gRPC', 'Kubernetes', 'Prometheus'],
       letter: 'M',
       link: 'https://microservicos-demo.vercel.app',
