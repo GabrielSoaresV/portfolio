@@ -37,15 +37,15 @@
 }
 
 .footer-logo {
-  display: inline-block;
-  font-size: 1.75rem;
-  font-weight: 700;
-  background: linear-gradient(135deg, #3b82f6, #10b981);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  display: flex;
+  align-items: center;
   margin-bottom: 16px;
-  transition: transform 0.3s ease;
+}
+
+.footer-logo img {
+  width: 9vw;
+  height: auto;
+  object-fit: contain;
 }
 
 .footer-logo:hover {
@@ -273,5 +273,13 @@
   }
   .footer-top-wave svg {
     height: 60px;
+  }
+}
+
+@media (max-width: 450px) {
+  .footer-logo img {
+    width: 14.5vw;
+    height: auto;
+    object-fit: contain;
   }
 }

@@ -24,13 +24,18 @@
 }
 
 .header-logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  background: linear-gradient(135deg, #3b82f6, #10b981);
+  display: flex;
+  align-items: center;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-decoration: none;
+}
+
+.header-logo img {
+  width: 9vw;
+  height: auto;
+  object-fit: contain;
 }
 
 .header-nav {
@@ -107,5 +112,13 @@
   .header-menu-btn {
     display: flex;
     z-index: 1001;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-logo img {
+    width: 14.5vw;
+    height: auto;
+    object-fit: contain;
   }
 }

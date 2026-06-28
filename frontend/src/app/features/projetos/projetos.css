@@ -228,4 +228,7 @@
   .projetos {
     padding: 45px 24px;
   }
+  .projeto-coverCard {
+    object-fit: cover;
+  }
 }
