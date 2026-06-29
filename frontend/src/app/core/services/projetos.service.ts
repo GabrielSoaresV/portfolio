@@ -21,7 +21,8 @@ export interface ProjetoDetalhado {
   };
   funcionalidades: string[];
   tecnologias: { nome: string; descricao: string }[];
-  galeria: { src: string; legenda: string }[];
+  telasSistema: { src: string; legenda: string }[];
+  galeriaProjeto: { src: string; legenda: string }[];
   documentacao: {
     arquitetura: string;
     instalacao: string;
@@ -40,15 +41,15 @@ export class ProjetosService {
       progressBar: 71,
       title: 'SINCA - Sistema Integrado de Negócios e Controle Administrativo',
       shortDesc: 'Plataforma unificada para gestão administrativa, processos internos, autenticação, calendário e comunicação organizacional.',
-      descriptionCard: 'Desenvolvido voluntariamente para uma instituição social, o SINCA substituiu processos manuais por uma plataforma integrada de gestão, aumentando a eficiência e a segurança das operações da Casa Azul Felipe Augusto.',
+      descriptionCard: 'Desenvolvido voluntariamente para uma ONG, o SINCA substituiu processos manuais por uma plataforma integrada de gestão, aumentando a eficiência e a segurança das operações da Casa Azul Felipe Augusto.',
       descriptionDetalhes: 'projects/sinca/descricao.html',
       tags: ['Angular', 'Java', 'PostgreSQL', 'Spring Boot', 'Docker'],
-      coverCard: 'projects/sinca/img/sinca_login.gif',
+      coverCard: 'projects/sinca/img/teste.png',
       icon: 'projects/sinca/img/inca-icon.png',
-      link: '',
+      link: 'null',
       repo: 'https://github.com/GabrielSoaresV/SINCA.git',
-      docs: '',
-      coverImage: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1200',
+      docs: 'null',
+      coverImage: 'projects/sinca/img/teste.png',
       detalhes: {
         problema: 'A instituição dependia de controles descentralizados em planilhas e documentos físicos para gerenciar centenas de informações relacionadas a jovens aprendizes, empresas parceiras e contratos, gerando retrabalho, inconsistências e dificuldades no acompanhamento das atividades.',
         solucao: 'Projetei e desenvolvi o SINCA, uma plataforma de gestão institucional que centraliza os processos administrativos da Casa Azul. A solução incorpora autenticação centralizada, gestão de aprendizes, empresas, contratos, avaliações, calendário institucional e demandas internas, seguindo princípios de DDD, CQRS e Arquitetura Hexagonal para garantir escalabilidade e manutenibilidade.',
@@ -73,17 +74,29 @@ export class ProjetosService {
         { nome: 'Hibernate / JPA', descricao: 'Mapeamento objeto-relacional com persistência e gerenciamento de entidades' },
         { nome: 'Docker', descricao: 'Containerização da aplicação, padronização dos ambientes e deploy' }
       ],
-      galeria: [
-        { src: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Página inicial com destaques de produtos' },
-        { src: 'https://images.pexels.com/photos/5632402/pexels-photo-5632402.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Página de produto com galeria de imagens' },
-        { src: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Painel administrativo de vendas' },
-        { src: 'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Checkout otimizado para conversão' }
+      telasSistema: [
+        { src: 'projects/sinca/img/sinca_login.gif', legenda: 'Tela de login - 29/06/2026' },
+        { src: 'projects/sinca/galeria/home.png', legenda: 'Tela inicial - 29/06/2026' },
+        { src: 'projects/sinca/galeria/contratos.png', legenda: 'Tela de contratos - 29/06/2026' },
+        { src: 'projects/sinca/galeria/avaliacoes.png', legenda: 'Tela de avaliações - 29/06/2026' },
+        { src: 'projects/sinca/galeria/calendario.png', legenda: 'Tela de calendário - 29/06/2026' },
+        { src: 'projects/sinca/galeria/export.png', legenda: 'Tela de exportação - 29/06/2026' },
+      ],
+      galeriaProjeto: [
+        { src: 'projects/sinca/galeria/foto-1.jpg', legenda: 'Apresentação de protótipo de baixa fidelidade pelo Figma - 28/06/2025' },
+        { src: 'projects/sinca/galeria/foto-2.jpg', legenda: 'Reunião de Validação de Requisitos - 28/06/2025' },
+        { src: 'projects/sinca/galeria/foto-3.jpeg', legenda: 'Primeiro teste rodando na rede local da ONG - 25/11/2025' },
+        { src: 'projects/sinca/galeria/foto-4.jpeg', legenda: 'Configurando SSH para acesso remoto - 11/02/2026' },
+        { src: 'projects/sinca/galeria/foto-5.jpg', legenda: 'Instalando ferramentas de observabilidade e monitoriamento - 19/04/2026' },
+        { src: 'projects/sinca/galeria/foto-6.jpg', legenda: 'Upgrade de memória do servidor que hospeda a aplicação - 20/04/2026' },
+        { src: 'projects/sinca/galeria/foto-7.jpg', legenda: 'Atendendo chamado "servidor sem internet" - 24/06/2026' },
+        { src: 'projects/sinca/galeria/foto-8.jpeg', legenda: 'O motivo da internet ter caído 😂 - 24/06/2026' },
       ],
       documentacao: {
-        arquitetura: 'O projeto segue uma arquitetura em camadas com separação clara entre frontend (Angular), API (Spring Boot) e banco de dados (PostgreSQL). O frontend utiliza standalone components e signals para gerenciamento de estado. A API implementa o padrão Repository Pattern com injeção de dependências.',
-        instalacao: '1. Clone o repositório\n2. Instale as dependências com npm install\n3. Configure as variáveis de ambiente no .env\n4. Execute as migrations com npm run migrate\n5. Inicie o servidor com npm run dev\n6. O frontend estará disponível em http://localhost:4200',
-        uso: 'Após a instalação, acesse o painel administrativo em /admin com as credenciais padrão. Cadastre produtos, configure categorias e personalize o tema. O checkout está disponível publicamente e aceita pagamentos de teste com cartões Stripe de teste.',
-        api: 'A API REST está documentada em /api/docs. Endpoints principais: GET /api/products (listar produtos), POST /api/orders (criar pedido), GET /api/orders/:id (detalhes do pedido). Autenticação via JWT.'
+        arquitetura: 'Em homologação...',
+        instalacao: 'Em homologação...',
+        uso: 'Em homologação...',
+        api: 'Em homologação...'
       }
     },
     {
@@ -94,12 +107,12 @@ export class ProjetosService {
       descriptionCard: 'Dashboard de analytics em tempo real para uma empresa de marketing digital que precisava consolidar métricas de múltiplas fontes em um único painel visual e interativo.',
       descriptionDetalhes: 'Dashboard de analytics em tempo real para uma empresa de marketing digital que precisava consolidar métricas de múltiplas fontes em um único painel visual e interativo.',
       tags: ['React', 'TypeScript', 'D3.js', 'Firebase'],
-      coverCard: 'D',
+      coverCard: 'img/homolog2.png',
       icon: 'projects/sinca/img/inca-icon2.png',
       link: 'https://analytics-demo.vercel.app',
       repo: 'https://github.com/dev/dashboard-analytics',
       docs: 'https://docs.analytics-demo.vercel.app',
-      coverImage: 'https://images.pexels.com/photos/577210/pexels-photo-577210.jpeg?auto=compress&cs=tinysrgb&w=1200',
+      coverImage: 'https://chatgpt.com/backend-api/estuary/content?id=file_0000000031e8720e9c52edb7cb8cfa2c&ts=495215&p=fs&cid=1&sig=b1d080faefbc1714d4221593c25642b04b82134e16075f4065192a5d85ac36f5&v=0?auto=compress&cs=tinysrgb&w=1200',
       detalhes: {
         problema: 'A equipe de marketing gastava 15+ horas semanais compilando relatórios manuais de Google Analytics, Facebook Ads e Google Ads. Os dados estavam desatualizados e as decisões eram tomadas com informações de 1-2 semanas atrás.',
         solucao: 'Criei um dashboard unificado que consome APIs de múltiplas fontes em tempo real, com visualizações interativas usando D3.js e React. Implementei filtros dinâmicos, comparação de períodos e alertas automáticos para anomalias.',
@@ -123,7 +136,13 @@ export class ProjetosService {
         { nome: 'Tailwind CSS', descricao: 'Estilização utilitária responsiva' },
         { nome: 'Recharts', descricao: 'Gráficos declarativos para React' }
       ],
-      galeria: [
+      telasSistema: [
+        { src: 'https://images.pexels.com/photos/577210/pexels-photo-577210.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Dashboard principal com métricas consolidadas' },
+        { src: 'https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Gráficos de funil de conversão' },
+        { src: 'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Relatório comparativo de campanhas' },
+        { src: 'https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Configuração de alertas e metas' }
+      ],
+      galeriaProjeto: [
         { src: 'https://images.pexels.com/photos/577210/pexels-photo-577210.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Dashboard principal com métricas consolidadas' },
         { src: 'https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Gráficos de funil de conversão' },
         { src: 'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Relatório comparativo de campanhas' },
@@ -144,7 +163,7 @@ export class ProjetosService {
       descriptionCard: 'Aplicativo mobile para gestão de equipes e tarefas com notificações push e sincronização offline.',
       descriptionDetalhes: 'Aplicativo mobile completo para gestão de equipes de campo em uma construtora, com foco em sincronização offline e geolocalização para acompanhamento de atividades.',
       tags: ['React Native', 'Redux', 'Node.js', 'MongoDB'],
-      coverCard: 'A',
+      coverCard: 'img/homolog2.png',
       icon: 'projects/sinca/img/inca-icon2.png',
       link: 'https://appgestao-demo.vercel.app',
       repo: 'https://github.com/dev/app-gestao',
@@ -173,7 +192,13 @@ export class ProjetosService {
         { nome: 'Expo', descricao: 'Plataforma de desenvolvimento e build' },
         { nome: 'OneSignal', descricao: 'Notificações push cross-platform' }
       ],
-      galeria: [
+      telasSistema: [
+        { src: 'https://images.pexels.com/photos/577210/pexels-photo-577210.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Dashboard principal com métricas consolidadas' },
+        { src: 'https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Gráficos de funil de conversão' },
+        { src: 'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Relatório comparativo de campanhas' },
+        { src: 'https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Configuração de alertas e metas' }
+      ],
+      galeriaProjeto: [
         { src: 'https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Tela inicial com resumo do dia' },
         { src: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Kanban de tarefas da equipe' },
         { src: 'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Registro de ponto com geolocalização' },
@@ -194,7 +219,7 @@ export class ProjetosService {
       descriptionCard: 'Plataforma SaaS de automação de workflows que permite criar fluxos de trabalho visuais conectando diversos serviços, similar ao Zapier mas com foco em empresas brasileiras.',
       descriptionDetalhes: 'Plataforma SaaS de automação de workflows que permite criar fluxos de trabalho visuais conectando diversos serviços, similar ao Zapier mas com foco em empresas brasileiras.',
       tags: ['Vue.js', 'Python', 'AWS', 'Docker'],
-      coverCard: 'S',
+      coverCard: 'img/homolog2.png',
       icon: 'projects/sinca/img/inca-icon2.png',
       link: 'https://automacao-demo.vercel.app',
       repo: 'https://github.com/dev/saas-automacao',
@@ -223,7 +248,13 @@ export class ProjetosService {
         { nome: 'Celery', descricao: 'Fila de tarefas distribuídas' },
         { nome: 'PostgreSQL', descricao: 'Banco relacional multi-tenant' }
       ],
-      galeria: [
+      telasSistema: [
+        { src: 'https://images.pexels.com/photos/577210/pexels-photo-577210.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Dashboard principal com métricas consolidadas' },
+        { src: 'https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Gráficos de funil de conversão' },
+        { src: 'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Relatório comparativo de campanhas' },
+        { src: 'https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Configuração de alertas e metas' }
+      ],
+      galeriaProjeto: [
         { src: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Editor visual de workflows' },
         { src: 'https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Biblioteca de integrações' },
         { src: 'https://images.pexels.com/photos/1181676/pexels-photo-1181676.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Logs de execução em tempo real' },
@@ -244,7 +275,7 @@ export class ProjetosService {
       descriptionCard: 'Plataforma completa de ensino a distância desenvolvida para uma instituição de educação tecnológica, com suporte a aulas ao vivo, certificação automática e comunidade de alunos.',
       descriptionDetalhes: 'Plataforma completa de ensino a distância desenvolvida para uma instituição de educação tecnológica, com suporte a aulas ao vivo, certificação automática e comunidade de alunos.',
       tags: ['Angular', 'Spring Boot', 'MySQL', 'WebRTC'],
-      coverCard: 'P',
+      coverCard: 'img/homolog2.png',
       icon: 'projects/sinca/img/inca-icon2.png',
       link: 'https://cursos-demo.vercel.app',
       repo: 'https://github.com/dev/portal-cursos',
@@ -273,7 +304,13 @@ export class ProjetosService {
         { nome: 'AWS CloudFront', descricao: 'CDN para entrega de vídeos' },
         { nome: 'Ethereum', descricao: 'Validação de certificados na blockchain' }
       ],
-      galeria: [
+      telasSistema: [
+        { src: 'https://images.pexels.com/photos/577210/pexels-photo-577210.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Dashboard principal com métricas consolidadas' },
+        { src: 'https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Gráficos de funil de conversão' },
+        { src: 'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Relatório comparativo de campanhas' },
+        { src: 'https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Configuração de alertas e metas' }
+      ],
+      galeriaProjeto: [
         { src: 'https://images.pexels.com/photos/301920/pexels-photo-301920.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Player de vídeo com anotações' },
         { src: 'https://images.pexels.com/photos/301926/pexels-photo-301926.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Aula ao vivo com múltiplos participantes' },
         { src: 'https://images.pexels.com/photos/301921/pexels-photo-301921.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Quiz interativo durante a aula' },
@@ -294,7 +331,7 @@ export class ProjetosService {
       descriptionCard: 'Arquitetura de microserviços completa desenvolvida para uma fintech que precisava de alta disponibilidade, escalabilidade automática e observabilidade total de seus serviços financeiros.',
       descriptionDetalhes: 'Arquitetura de microserviços completa desenvolvida para uma fintech que precisava de alta disponibilidade, escalabilidade automática e observabilidade total de seus serviços financeiros.',
       tags: ['Go', 'gRPC', 'Kubernetes', 'Prometheus'],
-      coverCard: 'M',
+      coverCard: 'img/homolog2.png',
       icon: 'projects/sinca/img/inca-icon2.png',
       link: 'https://microservicos-demo.vercel.app',
       repo: 'https://github.com/dev/api-microservicos',
@@ -323,7 +360,13 @@ export class ProjetosService {
         { nome: 'Grafana', descricao: 'Dashboards de observabilidade' },
         { nome: 'Istio', descricao: 'Service mesh para segurança e tracing' }
       ],
-      galeria: [
+      telasSistema: [
+        { src: 'https://images.pexels.com/photos/577210/pexels-photo-577210.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Dashboard principal com métricas consolidadas' },
+        { src: 'https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Gráficos de funil de conversão' },
+        { src: 'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Relatório comparativo de campanhas' },
+        { src: 'https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Configuração de alertas e metas' }
+      ],
+      galeriaProjeto: [
         { src: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Arquitetura de microserviços' },
         { src: 'https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Dashboard Grafana de métricas' },
         { src: 'https://images.pexels.com/photos/1181676/pexels-photo-1181676.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Tracing distribuído no Jaeger' },

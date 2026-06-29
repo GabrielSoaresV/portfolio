@@ -14,11 +14,12 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 })
 export class ProjetoDetalhe implements OnInit {
   projeto!: ProjetoDetalhado;
-  activeTab: 'descricao' | 'documentacao' | 'galeria' = 'descricao';
+  activeTab: 'descricao' | 'documentacao' | 'galeriaProjeto' | 'telasSistema' = 'descricao';
   progressBar = 1;
   htmlDescription!: SafeHtml;
   isLoaded = false;
   descricaoExpandida = false;
+  imagemSelecionada: string | null = null;
 
   get progressoProjeto(): number {
     return Math.min(100, Math.max(1, this.progressBar));
@@ -63,8 +64,16 @@ export class ProjetoDetalhe implements OnInit {
     );
   }
 
-  setTab(tab: 'descricao' | 'documentacao' | 'galeria'): void {
+  setTab(tab: 'descricao' | 'documentacao' | 'galeriaProjeto' | 'telasSistema'): void {
     this.activeTab = tab;
+  }
+
+  abrirImagem(src: string) {
+    this.imagemSelecionada = src;
+  }
+
+  fecharImagem() {
+    this.imagemSelecionada = null;
   }
 
   goBack(): void {
