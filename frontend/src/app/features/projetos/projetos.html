@@ -7,15 +7,22 @@
     </div>
 
     <div class="projetos-grid" [class.collapsed]="!expandido">
-      <a class="projeto-card animate-fade-in-up" *ngFor="let projeto of projetos; let i = index" [routerLink]="['/projetos', projeto.slug]" [style.animationDelay]="(i * 0.1 + 0.3) + 's'">
+      <div class="projeto-card animate-fade-in-up" *ngFor="let projeto of projetos; let i = index" [class.disabled]="projeto.status !== 'PUBLICADO'"
+        [style.animationDelay]="(i * 0.1 + 0.3) + 's'"
+        [attr.aria-disabled]="projeto.status !== 'PUBLICADO'"
+        [attr.tabindex]="projeto.status === 'PUBLICADO' ? 0 : -1"
+        role="button"
+        (click)="goToProject(projeto)"
+        (keydown.enter)="goToProject(projeto)"
+        (keydown.space)="goToProject(projeto); $event.preventDefault()">
         <div class="projeto-image">
           <div class="projeto-placeholder">
-            <img class="projeto-coverCard" [src]="projeto.coverCard" [alt]="projeto.title"/>
+            <img class="projeto-coverCard" [src]="getImageSrc(projeto.coverCard)" [alt]="projeto.title"/>
           </div>
-          <div class="projeto-overlay">
-            <span class="projeto-link">
+          <div class="projeto-overlay" [class.disabled-overlay]="projeto.status !== 'PUBLICADO'">
+            <span class="projeto-link" [class.disabled-link]="projeto.status !== 'PUBLICADO'">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              Ver Detalhes
+              {{ projeto.status === 'PUBLICADO'? 'Ver Detalhes': 'Em Homologação' }}
             </span>
           </div>
         </div>
@@ -26,7 +33,7 @@
             <span class="projeto-tag" *ngFor="let tag of projeto.tags">{{ tag }}</span>
           </div>
         </div>
-      </a>
+      </div>
     </div>
 
     <div class="mobile-toggle" (click)="toggle()">

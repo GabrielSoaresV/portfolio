@@ -1,7 +1,7 @@
 <section class="projeto-detalhe" *ngIf="projeto">
   <div class="detalhe-hero">
     <div class="detalhe-cover">
-      <img [src]="projeto.coverImage" [alt]="'Capa do projeto ' + projeto.title" />
+      <img [src]="getImageSrc(projeto.coverImage)" [alt]="'Capa do projeto ' + projeto.title" />
       <div class="detalhe-cover-overlay"></div>
     </div>
     <div class="detalhe-hero-content">
@@ -10,25 +10,25 @@
         Voltar
       </button>
       <div class="detalhe-hero-info">
-        <img class="detalhe-coverCard" [src]="projeto.icon" [alt]="projeto.title"/>
+        <img class="detalhe-coverCard" [src]="getImageSrc(projeto.icon)" [alt]="projeto.title"/>
         <h1 class="detalhe-title">{{ projeto.title }}</h1>
         <p class="detalhe-short">{{ projeto.shortDesc }}</p>
         <div class="detalhe-tags">
           <span class="detalhe-tag" *ngFor="let tag of projeto.tags">{{ tag }}</span>
         </div>
         <div class="detalhe-actions">
-          <a [href]="projeto.link" target="_blank" class="btn btn-primary">
+          <button type="button" class="btn btn-primary" [disabled]="!hasValidValue(projeto.link)" [attr.aria-disabled]="!hasValidValue(projeto.link)" (click)="openExternalLink(projeto.link)">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
             Ver Projeto
-          </a>
-          <a [href]="projeto.repo" target="_blank" class="btn btn-secondary">
+          </button>
+          <button type="button" class="btn btn-secondary" [disabled]="!hasValidValue(projeto.repo)" [attr.aria-disabled]="!hasValidValue(projeto.repo)" (click)="openExternalLink(projeto.repo)">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
             Repositório
-          </a>
-          <a [href]="projeto.docs" target="_blank" class="btn btn-secondary">
+          </button>
+          <button type="button" class="btn btn-secondary" [disabled]="!hasValidValue(projeto.docs)" [attr.aria-disabled]="!hasValidValue(projeto.docs)" (click)="openExternalLink(projeto.docs)">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
             Documentação
-          </a>
+          </button>
         </div>
       </div>
 
@@ -169,7 +169,7 @@
                   <line x1="3" y1="21" x2="10" y2="14"/>
                 </svg>
               </button>
-              <img [src]="img.src" [alt]="img.legenda" loading="lazy" />
+              <img [src]="getImageSrc(img.src)" [alt]="img.legenda" loading="lazy" />
                 <div class="image-overlay">
                   <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
                   <span>Expandir</span>

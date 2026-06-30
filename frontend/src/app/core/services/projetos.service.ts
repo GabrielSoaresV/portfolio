@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
 export interface ProjetoDetalhado {
+  status: 'PUBLICADO' | 'HOMOLOGACAO';
   slug: string;
   progressBar: number;
   title: string;
@@ -37,6 +38,7 @@ export interface ProjetoDetalhado {
 export class ProjetosService {
   private projetos: ProjetoDetalhado[] = [
     {
+      status: 'PUBLICADO',
       slug: 'sinca',
       progressBar: 71,
       title: 'SINCA - Sistema Integrado de Negócios e Controle Administrativo',
@@ -100,63 +102,53 @@ export class ProjetosService {
       }
     },
     {
-      slug: 'dashboard-analytics',
-      progressBar: 85,
-      title: 'Dashboard Analytics',
-      shortDesc: 'Painel de analytics em tempo real com gráficos interativos, relatórios personalizados e exportação de dados.',
-      descriptionCard: 'Dashboard de analytics em tempo real para uma empresa de marketing digital que precisava consolidar métricas de múltiplas fontes em um único painel visual e interativo.',
-      descriptionDetalhes: 'Dashboard de analytics em tempo real para uma empresa de marketing digital que precisava consolidar métricas de múltiplas fontes em um único painel visual e interativo.',
-      tags: ['React', 'TypeScript', 'D3.js', 'Firebase'],
-      coverCard: 'img/homolog2.png',
-      icon: 'projects/sinca/img/inca-icon2.png',
-      link: 'https://analytics-demo.vercel.app',
-      repo: 'https://github.com/dev/dashboard-analytics',
-      docs: 'https://docs.analytics-demo.vercel.app',
-      coverImage: 'https://chatgpt.com/backend-api/estuary/content?id=file_0000000031e8720e9c52edb7cb8cfa2c&ts=495215&p=fs&cid=1&sig=b1d080faefbc1714d4221593c25642b04b82134e16075f4065192a5d85ac36f5&v=0?auto=compress&cs=tinysrgb&w=1200',
+      status: 'HOMOLOGACAO',
+      slug: 'null',
+      progressBar: 0,
+      title: 'null',
+      shortDesc: 'null',
+      descriptionCard: 'null',
+      descriptionDetalhes: 'null',
+      tags: ['null'],
+      coverCard: 'null',
+      icon: 'null',
+      link: 'null',
+      repo: 'null',
+      docs: 'null',
+      coverImage: '',
       detalhes: {
-        problema: 'A equipe de marketing gastava 15+ horas semanais compilando relatórios manuais de Google Analytics, Facebook Ads e Google Ads. Os dados estavam desatualizados e as decisões eram tomadas com informações de 1-2 semanas atrás.',
-        solucao: 'Criei um dashboard unificado que consome APIs de múltiplas fontes em tempo real, com visualizações interativas usando D3.js e React. Implementei filtros dinâmicos, comparação de períodos e alertas automáticos para anomalias.',
-        resultado: 'O time de marketing reduziu o tempo de geração de relatórios de 15h para 30 minutos semanais. Decisões passaram a ser tomadas com dados de até 5 minutos atrás, aumentando o ROI das campanhas em 25%.'
+        problema: 'null',
+        solucao: 'null',
+        resultado: 'null',
       },
       funcionalidades: [
-        'Dashboard em tempo real com atualização automática a cada 30s',
-        'Gráficos interativos com zoom, pan e tooltip detalhado',
-        'Relatórios personalizáveis com drag-and-drop',
-        'Comparação de períodos com análise de tendências',
-        'Alertas automáticos para anomalias e metas',
-        'Exportação de relatórios em PDF, CSV e Excel',
-        'Compartilhamento de dashboards via link público',
-        'Integração com Google Analytics, Facebook Ads e Google Ads'
+        'null',
+        'null',
+        'null',
+        'null'
       ],
       tecnologias: [
-        { nome: 'React 18', descricao: 'Frontend com hooks e context API' },
-        { nome: 'TypeScript', descricao: 'Tipagem estática para segurança do código' },
-        { nome: 'D3.js', descricao: 'Visualizações de dados customizadas' },
-        { nome: 'Firebase', descricao: 'Backend-as-a-Service para autenticação e realtime' },
-        { nome: 'Tailwind CSS', descricao: 'Estilização utilitária responsiva' },
-        { nome: 'Recharts', descricao: 'Gráficos declarativos para React' }
+        { nome: 'null', descricao: 'null' },
+        { nome: 'null', descricao: 'null' }
       ],
       telasSistema: [
-        { src: 'https://images.pexels.com/photos/577210/pexels-photo-577210.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Dashboard principal com métricas consolidadas' },
-        { src: 'https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Gráficos de funil de conversão' },
-        { src: 'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Relatório comparativo de campanhas' },
-        { src: 'https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Configuração de alertas e metas' }
+        { src: 'null', legenda: 'null' },
+        { src: 'null', legenda: 'null' }
       ],
       galeriaProjeto: [
-        { src: 'https://images.pexels.com/photos/577210/pexels-photo-577210.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Dashboard principal com métricas consolidadas' },
-        { src: 'https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Gráficos de funil de conversão' },
-        { src: 'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Relatório comparativo de campanhas' },
-        { src: 'https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Configuração de alertas e metas' }
+        { src: 'null', legenda: 'null' },
+        { src: 'null', legenda: 'null' }
       ],
       documentacao: {
-        arquitetura: 'O frontend é um SPA React com TypeScript, utilizando Context API para estado global. Os gráficos são renderizados com D3.js para casos customizados e Recharts para gráficos padrão. O Firebase fornece autenticação, Firestore para dados em tempo real e Cloud Functions para processamento de dados.',
-        instalacao: '1. Clone o repositório\n2. Execute npm install\n3. Configure o Firebase no .env\n4. Execute npm run dev\n5. Acesse http://localhost:3000',
-        uso: 'Faça login com uma conta Google. O dashboard carrega automaticamente as métricas das contas conectadas. Use os filtros no topo para ajustar o período e as fontes de dados. Arraste os widgets para reorganizar o layout.',
-        api: 'As APIs de terceiros são consumidas via Cloud Functions do Firebase. Os dados são processados e armazenados no Firestore para consulta rápida pelo frontend.'
+        arquitetura: 'null.',
+        instalacao: 'null.',
+        uso: 'null.',
+        api: 'null.'
       }
     },
     {
-      slug: 'app-gestao',
+      status: 'HOMOLOGACAO',
+      slug: 'null',
       progressBar: 70,
       title: 'App de Gestão',
       shortDesc: 'Aplicativo mobile para gestão de equipes e tarefas com notificações push e sincronização offline.',
@@ -212,6 +204,7 @@ export class ProjetosService {
       }
     },
     {
+      status: 'HOMOLOGACAO',
       slug: 'saas-automacao',
       progressBar: 65,
       title: 'SaaS de Automação',
@@ -267,118 +260,6 @@ export class ProjetosService {
         api: 'A API pública permite criar e gerenciar workflows programaticamente. Autenticação via API key. Documentação completa em /api/docs com exemplos em Python, JavaScript e cURL.'
       }
     },
-    {
-      slug: 'portal-cursos',
-      progressBar: 90,
-      title: 'Portal de Cursos',
-      shortDesc: 'Plataforma de ensino online com aulas em vídeo, quizzes, certificados e fórum de discussão.',
-      descriptionCard: 'Plataforma completa de ensino a distância desenvolvida para uma instituição de educação tecnológica, com suporte a aulas ao vivo, certificação automática e comunidade de alunos.',
-      descriptionDetalhes: 'Plataforma completa de ensino a distância desenvolvida para uma instituição de educação tecnológica, com suporte a aulas ao vivo, certificação automática e comunidade de alunos.',
-      tags: ['Angular', 'Spring Boot', 'MySQL', 'WebRTC'],
-      coverCard: 'img/homolog2.png',
-      icon: 'projects/sinca/img/inca-icon2.png',
-      link: 'https://cursos-demo.vercel.app',
-      repo: 'https://github.com/dev/portal-cursos',
-      docs: 'https://docs.cursos-demo.vercel.app',
-      coverImage: 'https://images.pexels.com/photos/301920/pexels-photo-301920.jpeg?auto=compress&cs=tinysrgb&w=1200',
-      detalhes: {
-        problema: 'Uma escola de tecnologia precisava migrar 100% para o ensino remoto durante a pandemia. A plataforma anterior não suportava aulas ao vivo, tinha problemas de performance com 500+ alunos simultâneos e não gerenciava certificados.',
-        solucao: 'Desenvolvi uma plataforma robusta com Angular para o frontend, Spring Boot para a API e WebRTC para aulas ao vivo. Implementei streaming adaptativo, quiz interativo e geração automática de certificados com validação blockchain.',
-        resultado: 'A plataforma suporta 2000+ alunos simultâneos em aulas ao vivo. A taxa de conclusão de cursos aumentou de 30% para 75%. Mais de 50 mil certificados foram emitidos com 100% de validação online.'
-      },
-      funcionalidades: [
-        'Aulas em vídeo com player customizado e anotações',
-        'Aulas ao vivo com WebRTC e chat integrado',
-        'Quizzes interativos com feedback imediato',
-        'Certificados automáticos com validação blockchain',
-        'Fórum de discussão por curso e módulo',
-        'Progresso do aluno com gamificação',
-        'Painel do instrutor com analytics de turma',
-        'App mobile para assistir aulas offline'
-      ],
-      tecnologias: [
-        { nome: 'Angular 17', descricao: 'Frontend com SSR e lazy loading' },
-        { nome: 'Spring Boot', descricao: 'API Java com JPA e segurança OAuth2' },
-        { nome: 'MySQL', descricao: 'Banco relacional com replicação' },
-        { nome: 'WebRTC', descricao: 'Streaming de aulas ao vivo' },
-        { nome: 'AWS CloudFront', descricao: 'CDN para entrega de vídeos' },
-        { nome: 'Ethereum', descricao: 'Validação de certificados na blockchain' }
-      ],
-      telasSistema: [
-        { src: 'https://images.pexels.com/photos/577210/pexels-photo-577210.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Dashboard principal com métricas consolidadas' },
-        { src: 'https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Gráficos de funil de conversão' },
-        { src: 'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Relatório comparativo de campanhas' },
-        { src: 'https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Configuração de alertas e metas' }
-      ],
-      galeriaProjeto: [
-        { src: 'https://images.pexels.com/photos/301920/pexels-photo-301920.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Player de vídeo com anotações' },
-        { src: 'https://images.pexels.com/photos/301926/pexels-photo-301926.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Aula ao vivo com múltiplos participantes' },
-        { src: 'https://images.pexels.com/photos/301921/pexels-photo-301921.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Quiz interativo durante a aula' },
-        { src: 'https://images.pexels.com/photos/301922/pexels-photo-301922.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Certificado com QR code de validação' }
-      ],
-      documentacao: {
-        arquitetura: 'O frontend Angular utiliza SSR para SEO e lazy loading para code splitting. A API Spring Boot implementa OAuth2 com JWT, JPA para persistência e WebSocket para aulas ao vivo. O streaming de vídeo utiliza AWS CloudFront com HLS. Certificados são armazenados na blockchain Ethereum para imutabilidade.',
-        instalacao: '1. Clone o repositório\n2. Configure o Java 17 e Maven\n3. Instale as dependências do Angular\n4. Configure o banco MySQL\n5. Execute mvn spring-boot:run para a API\n6. Execute ng serve para o frontend',
-        uso: 'Instrutores criam cursos no painel admin. Alunos se matriculam e acompanham o progresso. Aulas ao vivo são agendadas e notificam os alunos. Certificados são gerados automaticamente ao completar 100% do curso.',
-        api: 'A API REST está documentada com OpenAPI. Endpoints para cursos, módulos, aulas, alunos, matrículas e certificados. Autenticação OAuth2 com roles de aluno, instrutor e admin.'
-      }
-    },
-    {
-      slug: 'api-microservicos',
-      progressBar: 80,
-      title: 'API de Microserviços',
-      shortDesc: 'Arquitetura de microserviços escalável com gateway, service discovery e observabilidade completa.',
-      descriptionCard: 'Arquitetura de microserviços completa desenvolvida para uma fintech que precisava de alta disponibilidade, escalabilidade automática e observabilidade total de seus serviços financeiros.',
-      descriptionDetalhes: 'Arquitetura de microserviços completa desenvolvida para uma fintech que precisava de alta disponibilidade, escalabilidade automática e observabilidade total de seus serviços financeiros.',
-      tags: ['Go', 'gRPC', 'Kubernetes', 'Prometheus'],
-      coverCard: 'img/homolog2.png',
-      icon: 'projects/sinca/img/inca-icon2.png',
-      link: 'https://microservicos-demo.vercel.app',
-      repo: 'https://github.com/dev/api-microservicos',
-      docs: 'https://docs.microservicos-demo.vercel.app',
-      coverImage: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=1200',
-      detalhes: {
-        problema: 'Uma fintech com 1 milhão de usuários enfrentava indisponibilidades frequentes. A arquitetura monolítica não escalava sob picos de transações e falhas em um módulo derrubavam todo o sistema. O time de 30 devs tinha deploys conflitantes.',
-        solucao: 'Projetei e implementei uma arquitetura de microserviços em Go com gRPC para comunicação interna, API Gateway para roteamento, Kubernetes para orquestração e Prometheus/Grafana para observabilidade completa.',
-        resultado: 'Disponibilidade subiu de 95% para 99.99%. Deploys passaram de 1 por semana para 20 por dia. O tempo médio de detecção de falhas caiu de 30 minutos para 30 segundos. A arquitetura suporta 10M+ usuários.'
-      },
-      funcionalidades: [
-        'API Gateway com rate limiting e autenticação',
-        'Service discovery com Consul',
-        'Comunicação inter-serviços via gRPC',
-        'Circuit breaker e retry automático',
-        'Tracing distribuído com Jaeger',
-        'Métricas em tempo real com Prometheus',
-        'Alertas automáticos via PagerDuty',
-        'Deploys automáticos com GitOps (ArgoCD)'
-      ],
-      tecnologias: [
-        { nome: 'Go', descricao: 'Linguagem nativa dos microserviços' },
-        { nome: 'gRPC + Protobuf', descricao: 'Comunicação eficiente entre serviços' },
-        { nome: 'Kubernetes', descricao: 'Orquestração de containers' },
-        { nome: 'Prometheus', descricao: 'Coleta e alerta de métricas' },
-        { nome: 'Grafana', descricao: 'Dashboards de observabilidade' },
-        { nome: 'Istio', descricao: 'Service mesh para segurança e tracing' }
-      ],
-      telasSistema: [
-        { src: 'https://images.pexels.com/photos/577210/pexels-photo-577210.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Dashboard principal com métricas consolidadas' },
-        { src: 'https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Gráficos de funil de conversão' },
-        { src: 'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Relatório comparativo de campanhas' },
-        { src: 'https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Configuração de alertas e metas' }
-      ],
-      galeriaProjeto: [
-        { src: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Arquitetura de microserviços' },
-        { src: 'https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Dashboard Grafana de métricas' },
-        { src: 'https://images.pexels.com/photos/1181676/pexels-photo-1181676.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Tracing distribuído no Jaeger' },
-        { src: 'https://images.pexels.com/photos/1181677/pexels-photo-1181677.jpeg?auto=compress&cs=tinysrgb&w=800', legenda: 'Kubernetes cluster topology' }
-      ],
-      documentacao: {
-        arquitetura: 'A arquitetura consiste em 12 microserviços escritos em Go, comunicando-se via gRPC. Um API Gateway em Nginx roteia requisições externas. O service mesh Istio gerencia segurança mTLS, circuit breaking e tracing. Kubernetes orquestra os containers em um cluster multi-zone na AWS.',
-        instalacao: '1. Clone o repositório\n2. Instale Docker, kubectl e Helm\n3. Configure o cluster Kubernetes\n4. Execute make deploy para deploy com Helm\n5. Acesse o Grafana em http://grafana.local',
-        uso: 'Cada microserviço tem seu próprio Dockerfile e Helm chart. O Makefile automatiza builds, tests e deploys. O API Gateway expõe a API pública enquanto serviços internos se comunicam via gRPC.',
-        api: 'A API pública é REST/JSON via Gateway. Serviços internos usam gRPC. Documentação da API pública em /api/docs. Cada serviço tem seu próprio README com detalhes de endpoints internos.'
-      }
-    }
   ];
 
   getAll(): ProjetoDetalhado[] {

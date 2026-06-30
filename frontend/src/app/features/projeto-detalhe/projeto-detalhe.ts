@@ -20,6 +20,7 @@ export class ProjetoDetalhe implements OnInit {
   isLoaded = false;
   descricaoExpandida = false;
   imagemSelecionada: string | null = null;
+  readonly fallbackImage = '/img/homolog2.png';
 
   get progressoProjeto(): number {
     return Math.min(100, Math.max(1, this.progressBar));
@@ -68,12 +69,40 @@ export class ProjetoDetalhe implements OnInit {
     this.activeTab = tab;
   }
 
-  abrirImagem(src: string) {
-    this.imagemSelecionada = src;
+  abrirImagem(src: string | null | undefined) {
+    this.imagemSelecionada = this.getImageSrc(src);
   }
 
   fecharImagem() {
     this.imagemSelecionada = null;
+  }
+
+  getImageSrc(value: string | null | undefined): string {
+    if (!value) {
+      return this.fallbackImage;
+    }
+
+    const normalized = value.trim().toLowerCase();
+
+    return normalized === '' || normalized === 'null' || normalized === 'undefined' ? this.fallbackImage : value;
+  }
+
+  hasValidValue(value: string | null |undefined): boolean {
+
+    if (value == null) {
+      return false;
+    }
+    
+    const normalized = value.trim().toLowerCase();
+    return normalized !== '' && normalized !== 'null' && normalized !== 'undefined';
+  }
+
+  openExternalLink(url: string | null | undefined): void {
+    if (!this.hasValidValue(url)) {
+      return;
+    }
+
+    window.open(url!, '_blank', 'noopener,noreferrer');
   }
 
   goBack(): void {
