@@ -24,9 +24,9 @@ export class Experiencia {
   experiencias: ExperienciaItem[] = [
     {
       periodo: 'Mar 2025 - Presente',
-      cargo: 'Desenvolvedor',
+      cargo: 'Desenvolvedor - Full Stack',
       empresa: 'Controladoria-Geral do Distrito Federal (CGDF)',
-      descricao: 'Desenvolvimento e manutenção de sistemas corporativos, implementação de novas funcionalidades, integração de APIs e participação na evolução de aplicações utilizadas pela Controladoria-Geral do Distrito Federal.'
+      descricao: 'Desenvolvimento e manutenção de sistemas corporativos com Java Spring, C# .NET e Angular, implementação de novas funcionalidades, integração de APIs e participação na evolução de aplicações utilizadas pela Controladoria-Geral do Distrito Federal.'
     }
   ];
 

@@ -5,7 +5,7 @@
       <h2 class="section-title animate-fade-in-up delay-1">Quem sou eu</h2>
       <p class="section-desc animate-fade-in-up delay-2">Conheça um pouco da minha história e trajetória pela TI.</p>
     </div>
-    <div class="sobre-content">
+    <div class="sobre-content" [class.collapsed]="!expandido">
       <div class="sobre-image animate-fade-in-up delay-2">
         <div class="carousel-wrapper">
           <div
@@ -45,7 +45,20 @@
         </div>
       </div>
       <div class="sobre-texto animate-fade-in-up delay-3">
-        <h3>Transformando curiosidade em soluções de software</h3>
+        <h3>Engenharia de Software Orientada a Resultados</h3>
+        <p>
+          Sou desenvolvedor de software com foco em Backend, 
+          especializado no ecossistema Java e C#, com experiência no desenvolvimento de aplicações robustas, 
+          escaláveis e de fácil manutenção. Tenho sólidos conhecimentos em arquitetura de software, 
+          padrões de projeto, APIs REST, metodologias ágeis e boas práticas de engenharia, 
+          além de utilizar Angular para o desenvolvimento de interfaces quando necessário. 
+          Atualmente, atuo na CGDF e tambem no desenvolvimento voluntário de sistemas para organizações sem 
+          fins lucrativos, aplicando princípios de arquitetura moderna para construir soluções duráveis 
+          que resolvem problemas reais e, ao mesmo tempo, ampliam minha experiência prática como 
+          engenheiro de software. Meu objetivo é evoluir continuamente, conquistar certificações 
+          reconhecidas internacionalmente e construir uma carreira em grandes empresas 
+          globais de tecnologia, contribuindo para projetos de alta complexidade e impacto.
+        </p>
         <p>
           Minha curiosidade por tecnologia começou ainda na infância, explorando
           eletrônicos e tentando entender como as coisas funcionavam. Com o tempo,
@@ -65,13 +78,6 @@
           problemas reais de negócios. Acredito que um bom software deve simplificar processos, 
           automatizar tarefas repetitivas e permitir que as pessoas foquem no que realmente importa.
         </p>
-
-        <p>
-          Além disso, tenho como um dos meus objetivos atuais contribuir com projetos open source e instituições 
-          sociais sem fins lucrativos. Desenvolvo sistemas gratuitos utilizando tecnologias livres, 
-          tornando ferramentas de gestão acessíveis para organizações que transformam a sociedade, 
-          mas que não possuem recursos para grandes investimentos em tecnologia.
-        </p>
         <div class="sobre-stats">
           <div class="stat animate-scale-in delay-5">
             <span class="stat-number">3</span>
@@ -87,6 +93,12 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="mobile-toggle" (click)="toggle()">
+      <span>{{ expandido ? 'Minimizar' : 'Expandir' }} sobre mim</span>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" [class.rotated]="expandido">
+        <polyline points="6 9 12 15 18 9"/>
+      </svg>
     </div>
   </div>
 </section>

@@ -15,6 +15,7 @@ export class SobreMim implements OnInit, OnDestroy {
   currentSlide = 0;
   private touchStartX = 0;
   private touchStartY = 0;
+  expandido = false;
 
   constructor(private cdr: ChangeDetectorRef) {}
 
@@ -55,20 +56,24 @@ export class SobreMim implements OnInit, OnDestroy {
   carouselItems: CarouselItem[] = [
     {
       image: 'img-sobre-mim-carrossel/foto_1.png',
-      descricao: 'Teste de foto 1'
+      descricao: 'Atualmente na empresa'
     },
     {
       image: 'img-sobre-mim-carrossel/foto_2.png',
-      descricao: 'Teste de foto 2'
+      descricao: 'Primeiro dia na empresa'
     },
     {
       image: 'img-sobre-mim-carrossel/foto_3.png',
-      descricao: 'Teste de foto 3'
+      descricao: 'Meu estágiario favorito'
     },
     {
       image: 'img-sobre-mim-carrossel/foto_4.png',
-      descricao: 'Teste de foto 4'
-    }
+      descricao: 'Primeiro evento de technologia'
+    },
+    {
+      image: 'img-sobre-mim-carrossel/foto_5.png',
+      descricao: 'Mesa de trabalho'
+    },
   ];
 
   nextSlide(): void {
@@ -81,6 +86,10 @@ export class SobreMim implements OnInit, OnDestroy {
 
   goToSlide(index: number): void {
     this.currentSlide = index;
+  }
+
+  toggle(): void {
+    this.expandido = !this.expandido;
   }
 
   onTouchStart(event: TouchEvent): void {
