@@ -40,7 +40,7 @@ export class ProjetosService {
     {
       status: 'PUBLICADO',
       slug: 'sinca',
-      progressBar: 71,
+      progressBar: 81,
       title: 'SINCA - Sistema Integrado de Negócios e Controle Administrativo',
       shortDesc: 'Plataforma unificada para gestão administrativa, processos internos, autenticação, calendário e comunicação organizacional.',
       descriptionCard: 'Desenvolvido voluntariamente para uma ONG, o SINCA substituiu processos manuais por uma plataforma integrada de gestão, aumentando a eficiência e a segurança das operações da Casa Azul Felipe Augusto.',
