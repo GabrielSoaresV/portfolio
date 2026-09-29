@@ -56,23 +56,23 @@ export class SobreMim implements OnInit, OnDestroy {
   carouselItems: CarouselItem[] = [
     {
       image: 'img-sobre-mim-carrossel/foto_1.png',
-      descricao: 'Atualmente na empresa'
+      descricao: ''
     },
     {
       image: 'img-sobre-mim-carrossel/foto_2.png',
-      descricao: 'Primeiro dia na empresa'
+      descricao: ''
     },
     {
       image: 'img-sobre-mim-carrossel/foto_3.png',
-      descricao: 'Meu estágiario favorito'
+      descricao: ''
     },
     {
       image: 'img-sobre-mim-carrossel/foto_4.png',
-      descricao: 'Primeiro evento de technologia'
+      descricao: ''
     },
     {
       image: 'img-sobre-mim-carrossel/foto_5.png',
-      descricao: 'Mesa de trabalho'
+      descricao: ''
     },
   ];
 
